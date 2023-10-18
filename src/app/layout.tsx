@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Rubik } from 'next/font/google'
 import Navbar from '../components/navbar/navbar'
-import Theme from '../context/themeprovider'
 import AuthProvider from '@/context/authprovider'
 import { NavProvider } from '@/context/navContext'
 import React from 'react'
@@ -23,12 +22,10 @@ export default function RootLayout ({
     <html lang='en'>
       <body className={inter.className}>
         <AuthProvider>
-          <Theme>
-            <NavProvider>
-              <Navbar />
-            </NavProvider>
-            {children}
-          </Theme>
+          <NavProvider>
+            <Navbar />
+          </NavProvider>
+          {children}
         </AuthProvider>
       </body>
     </html>
