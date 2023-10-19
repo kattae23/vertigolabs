@@ -9,6 +9,8 @@ export type AnalyticsArrType = {
   averageLtv: number;
   averageDurationExpectedProject: string;
   averageDurationEndOfProject: string;
+  averageIRRAchieved: number;
+  targetAverageIRR: number;
 }
 
 const analyticsArr: AnalyticsArrType = {
@@ -19,7 +21,9 @@ const analyticsArr: AnalyticsArrType = {
   averageProjectAmount: 327.623,
   averageLtv: 53.07,
   averageDurationExpectedProject: '14 meses',
-  averageDurationEndOfProject: '8 meses'
+  averageDurationEndOfProject: '8 meses',
+  averageIRRAchieved: 8.83,
+  targetAverageIRR: 8.23
 }
 
 export async function GET (request: NextRequest) {

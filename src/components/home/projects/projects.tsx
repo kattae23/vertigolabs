@@ -15,7 +15,7 @@ const ProjectsContainer = () => {
       </div>
       <ProjectCard />
       <div className='w-full flex mt-20 justify-center items-center'>
-        <Link href='oportunidades' className='px-4 py-2 bg-[#FD7B61] text-white text-sm rounded-sm'>VER MÁS PROYECTOS</Link>
+        <Link href='/oportunidades' className='px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm'>VER MÁS PROYECTOS</Link>
       </div>
     </section>
   )

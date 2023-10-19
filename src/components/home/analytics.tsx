@@ -8,16 +8,19 @@ import { BsFillCalendarMonthFill } from 'react-icons/bs'
 import { ImClock } from 'react-icons/im'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { HiRocketLaunch } from 'react-icons/hi2'
+import { FiTarget } from 'react-icons/fi'
+import Link from 'next/link'
 
 const fetchAnalytics = async () => {
-  return (await fetch(process.env.NEXTAPIURL! + '/api/analytics')).json() as Promise<AnalyticsArrType>
+  return (await fetch(process.env.NEXTAPIURL! + '/api/analytics', { next: { revalidate: 60 } })).json() as Promise<AnalyticsArrType>
 }
 
 const Analytics = async () => {
   const resp = await fetchAnalytics()
+  console.log(resp)
   return (
-    <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 md:px-32 flex-col'>
-      <h2 className='text-3xl text-gray-800 font-light mb-16 text-center'>Los proyectos con garantía hipotecaria <span className='font-bold'>en cifras</span></h2>
+    <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 mb-16 md:px-32 flex-col'>
+      <h2 className='text-3xl text-gray-800 font-light mb-16 mt-16 text-center'>Los proyectos con garantía hipotecaria <span className='font-bold'>en cifras</span></h2>
       <div className='w-full xl:max-w-fit gap-7 flex flex-col min-[1200px]:flex-row justify-center items-center'>
         <div className='w-full bg-white flex flex-col'>
           <div className='w-full flex flex-col md:flex-row'>
@@ -80,34 +83,31 @@ const Analytics = async () => {
           </div>
         </div>
       </div>
-      <div className='w-full bg-white flex flex-col mt-10 rounded-md'>
+      <div className='w-full flex flex-col mt-10 rounded-md'>
         <div className='w-full flex flex-col xl:flex-row'>
-          <div className='flex w-full xl:w-2/4 min-h-[131px] max-h-[131px] flex-row border border-r-0 border-gray-400/50 rounded-md rounded-r-none text-[#333333]'>
+          <div className='flex w-full xl:w-2/4 h-[131px] flex-row border border-r-0 border-gray-400/50 rounded-md rounded-r-none text-[#333333]'>
             <div className='flex w-full h-full flex-row justify-center items-center'>
-              <div className='w-1/4 px-14 bg-[#6BCCA4] h-full flex justify-center items-center'>
-                <HiRocketLaunch className='text-3xl' />
+              <div className='w-1/4 px-14 bg-[#8FCCC9] h-full flex justify-center items-center'>
+                <FiTarget className='text-4xl' />
               </div>
-              <div className='w-3/4 px-4 bg-[#B5E5D1] h-full flex items-center justify-center'>
+              <div className='w-3/4 px-4 bg-[#C9E5E4] h-full flex items-center justify-center'>
                 <div className='flex flex-col text-center items-center justify-center'>
-                  <h2 className='font-bold text-3xl'>8,83%</h2>
-                  <div className='flex flec-row'>
-                    <p className='font-normal'>TIR media conseguida</p>
-                    <AiOutlineInfoCircle className='ml-1' />
-                  </div>
+                  <h2 className='font-bold text-3xl'>{resp.targetAverageIRR}%</h2>
+                  <p className='font-medium'>TIR media objetivo</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className='flex w-full xl:w-2/4 min-h-[131px] max-h-[131px] flex-row border border-r-0 border-gray-400/50 rounded-md rounded-r-none text-[#333333]'>
+          <div className='flex ml-0 xl:ml-7 w-full xl:w-2/4 mt-7 xl:mt-0 h-[131px] flex-row border border-r-0 border-gray-400/50 rounded-md rounded-r-none text-[#333333]'>
             <div className='flex w-full h-full flex-row justify-center items-center'>
               <div className='w-1/4 px-14 bg-[#6BCCA4] h-full flex justify-center items-center'>
                 <HiRocketLaunch className='text-3xl' />
               </div>
               <div className='w-3/4 px-4 bg-[#B5E5D1] h-full flex items-center justify-center'>
                 <div className='flex flex-col text-center items-center justify-center'>
-                  <h2 className='font-bold text-3xl'>8,83%</h2>
+                  <h2 className='font-bold text-3xl'>{resp.averageIRRAchieved}%</h2>
                   <div className='flex flec-row'>
-                    <p className='font-normal'>TIR media conseguida</p>
+                    <p className='font-medium'>TIR media conseguida</p>
                     <AiOutlineInfoCircle className='ml-1' />
                   </div>
                 </div>
@@ -115,6 +115,9 @@ const Analytics = async () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='w-full flex mt-20 justify-center items-center'>
+        <Link href='/estadisticas' className='px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm uppercase'>Consulta la estadística completa</Link>
       </div>
     </section>
   )
