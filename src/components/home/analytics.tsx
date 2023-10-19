@@ -9,9 +9,8 @@ import { ImClock } from 'react-icons/im'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { HiRocketLaunch } from 'react-icons/hi2'
 
-const fetchAnalytics = () => {
-  return fetch(process.env.NEXTAUTH_URL! + '/api/analytics')
-    .then(res => res.json()) as Promise<AnalyticsArrType>
+const fetchAnalytics = async () => {
+  return (await fetch(process.env.NEXTAPIURL! + '/api/analytics')).json() as Promise<AnalyticsArrType>
 }
 
 const Analytics = async () => {
