@@ -18,6 +18,13 @@ const nextConfig = {
   },
   experimental: {
     serverActions: true
+  },
+  env: {
+    DATABASE_URL: 'mysql://root:123456@vertigolabs.site:3306/mydb',
+    NEXTAUTH_SECRET: 'lsdkmlskdmflksdkskmsdnkj',
+    NEXTAUTH_URL: 'http://vertigolabs.site',
+    NEXTAPIURL: 'http://vertigolabs.site',
+    SECRET_KEY: 'eefeijfkskjhfuhudhfudd'
   }
 }
 
