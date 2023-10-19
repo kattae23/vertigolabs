@@ -15,25 +15,25 @@ const imageLinks: CarouselItem[] = [
     src: '/housers-carousel-invest-01.jpg',
     text: 'Invierte en los mejores proyectos de crowdlending con garantía hipotecaria de primer grado',
     buttonText: 'Regístrate',
-    link: '/register'
+    link: '/auth/register'
   },
   {
     src: '/housers-carousel-get-funding-02.jpg',
     text: 'Financiación alternativa, flexible y con las mejores condiciones para promotores de proyectos inmobiliarios',
     buttonText: 'Financiate',
-    link: '/'
+    link: '/financiacion-empresas'
   },
   {
     src: '/housers-carousel-projects-03.jpg',
     text: 'Participa en proyectos inmobiliarios cuidadosamente seleccionados por nuestros especialistas',
     buttonText: 'Regístrate',
-    link: '/register'
+    link: '/auth/register'
   },
   {
     src: '/housers-carousel-platform-04.jpg',
     text: 'Con la seguridad de usar la plataforma tecnológica de crowdlending líder en Europa',
     buttonText: 'Regístrate',
-    link: '/register'
+    link: '/auth/register'
   }
 ]
 
