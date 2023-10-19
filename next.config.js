@@ -22,8 +22,8 @@ const nextConfig = {
   env: {
     DATABASE_URL: 'mysql://root:123456@vertigolabs.site:3306/mydb',
     NEXTAUTH_SECRET: 'lsdkmlskdmflksdkskmsdnkj',
-    NEXTAUTH_URL: 'http://vertigolabs.site',
-    NEXTAPIURL: 'http://vertigolabs.site',
+    NEXTAUTH_URL: 'https://vertigolabs.site',
+    NEXTAPIURL: 'https://vertigolabs.site',
     SECRET_KEY: 'eefeijfkskjhfuhudhfudd'
   }
 }

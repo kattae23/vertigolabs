@@ -10,7 +10,7 @@ import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { HiRocketLaunch } from 'react-icons/hi2'
 
 const fetchAnalytics = async () => {
-  return (await fetch(process.env.NEXTAPIURL + '/api/analytics')).json() as Promise<AnalyticsArrType>
+  return (await fetch(process.env.NEXTAPIURL! + '/api/analytics')).json() as Promise<AnalyticsArrType>
 }
 
 const Analytics = async () => {
