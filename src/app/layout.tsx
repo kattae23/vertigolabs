@@ -19,15 +19,15 @@ export default function RootLayout ({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
-        <AuthProvider>
+    <AuthProvider>
+      <html lang='en'>
+        <body className={inter.className}>
           <NavProvider>
             <Navbar />
           </NavProvider>
           {children}
-        </AuthProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </AuthProvider>
   )
 }
