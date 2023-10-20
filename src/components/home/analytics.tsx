@@ -12,12 +12,11 @@ import { FiTarget } from 'react-icons/fi'
 import Link from 'next/link'
 
 const fetchAnalytics = async () => {
-  return (await fetch(process.env.NEXTAPIURL! + '/api/analytics', { next: { revalidate: 60 } })).json() as Promise<AnalyticsArrType>
+  return (await fetch(process.env.NEXTAUTH_URL! + '/api/analytics', { next: { revalidate: 60 } })).json() as Promise<AnalyticsArrType>
 }
 
 const Analytics = async () => {
   const resp = await fetchAnalytics()
-  console.log(resp)
   return (
     <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 mb-16 md:px-32 flex-col'>
       <h2 className='text-3xl text-gray-800 font-light mb-16 mt-16 text-center'>Los proyectos con garantía hipotecaria <span className='font-bold'>en cifras</span></h2>

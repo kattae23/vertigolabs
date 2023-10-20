@@ -13,7 +13,6 @@ interface RequestBody {
 
 export async function POST (request: Request) {
   try {
-    console.log('pasando aqui')
     const body: RequestBody = await request.json()
 
     if (!body.password || body.password.length < 8) return new NextResponse(JSON.stringify({ msg: 'The password must be longer than 8 characters' }), { status: 401 })
