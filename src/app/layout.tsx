@@ -9,7 +9,7 @@ import React from 'react'
 const inter = Rubik({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800', '900'] })
 
 export const metadata: Metadata = {
-  title: 'Vertigo Labs - Dev',
+  title: 'Griso Corp - Dev',
   description: 'on development'
 }
 

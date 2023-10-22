@@ -1,11 +1,12 @@
 'use client'
 import Link from 'next/link'
 import React, { useContext } from 'react'
-import { Logo, LogoSmall, MenuIcon } from '../icons'
+import { MenuIcon } from '../icons'
 import Menu from './components/menu'
 import { NavContext } from '@/context/navContext'
 import MenuMobile from './components/menu-mobile'
 import clsx from 'clsx'
+import Image from 'next/image'
 
 const Navbar = () => {
   const navContext = useContext(NavContext)
@@ -14,7 +15,7 @@ const Navbar = () => {
     return null
   }
 
-  const { fix, setOpenMenu } = navContext
+  const { fix, setOpenMenu, openMenu } = navContext
 
   return (
     <header
@@ -35,14 +36,22 @@ const Navbar = () => {
         <button onClick={() => setOpenMenu(true)}>
           {fix ? <MenuIcon styles='fill-[#483C3D]' fill='white' /> : <MenuIcon styles='fill-white' fill='white' />}
         </button>
-        <Link href='/' className='ml-6'>
-          {fix ? <LogoSmall /> : <Logo />}
+        <Link href='/' className='ml-4 mb-2'>
+          <Image
+            src='/grisocorp.png'
+            alt='logo of griso corp, link to the home page'
+            width={600}
+            height={600}
+            className='w-32 md:w-36'
+          />
         </Link>
         <div className='flex flex-grow justify-end'>
           <Menu />
           <MenuMobile />
         </div>
       </nav>
+
+      <div className={clsx('absolute top-0 right-0 w-screen h-screen -z-20 transition-all duration-300 bg-black', openMenu ? 'opacity-50 flex' : 'opacity-0 hidden')} onClick={() => setOpenMenu(false)} />
     </header>
   )
 }

@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'vertigolabs',
+        hostname: 'vertigolabs.site',
         port: '',
         pathname: '/**'
       },
@@ -22,14 +22,8 @@ const nextConfig = {
       }
     ]
   },
-  experimental: {
-    serverActions: true
-  },
-  env: {
-    DATABASE_URL: 'mysql://root:123456@vertigolabs.site:3306/mydb',
-    NEXTAUTH_SECRET: 'lsdkmlskdmflksdkskmsdnkj',
-    NEXTAUTH_URL: 'http://127.0.0.1:3000',
-    SECRET_KEY: 'eefeijfkskjhfuhudhfudd'
+  httpAgentOptions: {
+    keepAlive: false
   }
 }
 

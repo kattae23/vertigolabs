@@ -26,7 +26,7 @@ const MenuMobile = () => {
       overflow-y-scroll
       top-0 
       transition-all 
-      duration-300 
+      duration-700
       absolute 
       flex 
       flex-col 

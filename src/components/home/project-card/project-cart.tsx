@@ -113,7 +113,11 @@ const projectsArr: ProjectInfo[] = [
   }
 ]
 
-const ProjectCard = () => {
+interface ProjectCardProps {
+  investmentInformationAnalytics?: boolean
+}
+
+const ProjectCard = ({ investmentInformationAnalytics }: ProjectCardProps) => {
   return (
 
     <article className='min-h-fit w-full relative flex justify-center'>
@@ -136,9 +140,9 @@ const ProjectCard = () => {
           }}
         >
           {(item: ProjectInfo, index: number) => (
-            <div className='w-full lg:max-w-[400px] h-auto border-2 rounded-lg py-3'>
+            <div key={index} className='w-full select-none lg:max-w-[400px] h-auto border-2 rounded-lg py-3'>
               <div className='px-3'>
-                <div className='flex flex-row justify-between'>
+                <div className='flex flex-row justify-between pb-2'>
                   <div className='flex flex-row'>
                     <BuildingIcon className='max-w-[30px] h-auto' />
                     <div className='h-auto ml-2'>
@@ -152,20 +156,30 @@ const ProjectCard = () => {
                     <Image src={findFlagUrlByIso2Code(item.flag.toUpperCase())} alt='spain flag icon' width={50} height={50} className='w-8' />
                   </div>
                 </div>
-                <div className='w-full h-auto flex flex-col py-3'>
-                  <div className='flex flex-row justify-between py-2'>
-                    <h3 className='text-base font-bold text-gray-800'>{item.actual} $</h3>
-                    <h3 className='text-base font-bold text-gray-800'>{item.meta} $</h3>
-                  </div>
-                  <ProgressDemo />
-                </div>
-                <div className='w-full h-auto flex flex-row py-3 justify-between'>
-                  <div className='flex flex-row items-center justify-center'>
-                    <BsFillPersonFill />
-                    <h3><strong>{item.investors}</strong> inversores</h3>
-                  </div>
-                  <h3>{item.dayLeft}</h3>
-                </div>
+                {
+                  investmentInformationAnalytics
+                    ? (
+                      <>
+                        <div className='w-full h-auto flex flex-col pb-1'>
+                          <div className='flex flex-row justify-between pb-2'>
+                            <h3 className='text-base font-bold text-gray-800'>{item.actual} $</h3>
+                            <h3 className='text-base font-bold text-gray-800'>{item.meta} $</h3>
+                          </div>
+                          <ProgressDemo />
+                        </div>
+                        <div className='w-full h-auto flex flex-row py-3 justify-between'>
+                          <div className='flex flex-row items-center justify-center'>
+                            <BsFillPersonFill />
+                            <h3><strong>{item.investors}</strong> inversores</h3>
+                          </div>
+                          <h3>{item.dayLeft}</h3>
+                        </div>
+                      </>
+                      )
+                    : (
+                      <></>
+                      )
+                }
               </div>
               <div className='w-full h-auto'>
                 <Image className='w-full' src={item.src} alt={'imagen de ' + item.name} width={500} height={500} />

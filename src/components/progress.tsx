@@ -8,7 +8,7 @@ export function ProgressDemo () {
   const [progress, setProgress] = React.useState(13)
 
   React.useEffect(() => {
-    const timer = setTimeout(() => setProgress(66), 500)
+    const timer = setTimeout(() => setProgress(Math.random() * 100), 500)
     return () => clearTimeout(timer)
   }, [])
 

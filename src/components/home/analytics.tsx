@@ -9,16 +9,18 @@ import { ImClock } from 'react-icons/im'
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { HiRocketLaunch } from 'react-icons/hi2'
 import { FiTarget } from 'react-icons/fi'
-import Link from 'next/link'
+import Button from './button'
 
-const fetchAnalytics = async () => {
-  return (await fetch(process.env.NEXTAUTH_URL! + '/api/analytics', { next: { revalidate: 60 } })).json() as Promise<AnalyticsArrType>
+async function fetchAnalytics () {
+  const res = await fetch(`${process.env.API_URL}/api/analytics`, { cache: 'no-store' })
+
+  return res.json() as Promise<AnalyticsArrType>
 }
 
-const Analytics = async () => {
-  const resp = await fetchAnalytics()
+async function Analytics () {
+  const analytics = await fetchAnalytics()
   return (
-    <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 mb-16 md:px-32 flex-col'>
+    <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 md:px-32 flex-col'>
       <h2 className='text-3xl text-gray-800 font-light mb-16 mt-16 text-center'>Los proyectos con garantía hipotecaria <span className='font-bold'>en cifras</span></h2>
       <div className='w-full xl:max-w-fit gap-7 flex flex-col min-[1200px]:flex-row justify-center items-center'>
         <div className='w-full bg-white flex flex-col'>
@@ -26,13 +28,13 @@ const Analytics = async () => {
             <AnalyticsCard
               Icon={FaHandshake}
               className='text-blue-200 text-5xl'
-              fetchText={resp.financedProjects}
+              fetchText={analytics.financedProjects}
               label='Proyectos financiados'
             />
             <AnalyticsCard
               Icon={FaBriefcase}
               className='text-orange-500/80 text-4xl'
-              fetchText={'$ ' + resp.investmentRaised + ' M'}
+              fetchText={'$ ' + analytics.investmentRaised + ' M'}
               label='Inversión captada'
             />
           </div>
@@ -40,13 +42,13 @@ const Analytics = async () => {
             <AnalyticsCard
               Icon={TbReload}
               className='text-lime-500 transform scale-x-[-1] text-5xl'
-              fetchText={resp.returnedProjects}
+              fetchText={analytics.returnedProjects}
               label='Proyectos devueltos'
             />
             <AnalyticsCard
               Icon={FaRegMoneyBillAlt}
               className='text-blue-600 text-4xl'
-              fetchText={resp.returnsAndDeliveries}
+              fetchText={analytics.returnsAndDeliveries}
               label='Devoluciones y repartos'
             />
           </div>
@@ -56,13 +58,13 @@ const Analytics = async () => {
             <AnalyticsCard
               Icon={IoMdAnalytics}
               className='text-[#FD7B61] text-4xl'
-              fetchText={resp.averageProjectAmount}
+              fetchText={analytics.averageProjectAmount}
               label='Importe medio proyecto'
             />
             <AnalyticsCard
               Icon={FaPercent}
               className='text-[#8FCCC9] text-4xl'
-              fetchText={resp.averageLtv + '%'}
+              fetchText={analytics.averageLtv + '%'}
               label='LTV medio'
             />
           </div>
@@ -70,13 +72,13 @@ const Analytics = async () => {
             <AnalyticsCard
               Icon={BsFillCalendarMonthFill}
               className='text-[#80BE15] text-4xl'
-              fetchText={resp.averageDurationExpectedProject}
+              fetchText={analytics.averageDurationExpectedProject}
               label='Duración media prevista proyecto'
             />
             <AnalyticsCard
               Icon={ImClock}
               className='text-[#1A71C1] text-4xl scale-x-[-1]'
-              fetchText={resp.averageDurationEndOfProject}
+              fetchText={analytics.averageDurationEndOfProject}
               label='Duración media final proyecto'
             />
           </div>
@@ -91,7 +93,7 @@ const Analytics = async () => {
               </div>
               <div className='w-3/4 px-4 bg-[#C9E5E4] h-full flex items-center justify-center'>
                 <div className='flex flex-col text-center items-center justify-center'>
-                  <h2 className='font-bold text-3xl'>{resp.targetAverageIRR}%</h2>
+                  <h2 className='font-bold text-3xl'>{analytics.targetAverageIRR}%</h2>
                   <p className='font-medium'>TIR media objetivo</p>
                 </div>
               </div>
@@ -104,7 +106,7 @@ const Analytics = async () => {
               </div>
               <div className='w-3/4 px-4 bg-[#B5E5D1] h-full flex items-center justify-center'>
                 <div className='flex flex-col text-center items-center justify-center'>
-                  <h2 className='font-bold text-3xl'>{resp.averageIRRAchieved}%</h2>
+                  <h2 className='font-bold text-3xl'>{analytics.averageIRRAchieved}%</h2>
                   <div className='flex flec-row'>
                     <p className='font-medium'>TIR media conseguida</p>
                     <AiOutlineInfoCircle className='ml-1' />
@@ -115,9 +117,9 @@ const Analytics = async () => {
           </div>
         </div>
       </div>
-      <div className='w-full flex mt-20 justify-center items-center'>
-        <Link href='/estadisticas' className='px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm uppercase'>Consulta la estadística completa</Link>
-      </div>
+      <Button link='/estadisticas' className='mb-16'>
+        Consulta la estadística completa
+      </Button>
     </section>
   )
 }
