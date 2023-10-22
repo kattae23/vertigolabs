@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
-import { CloseIcon, LogoSmall } from '../../icons'
+import { CloseIcon } from '../../icons'
 import { NavContext } from '@/context/navContext'
 import { menuLinks } from './menu'
 import clsx from 'clsx'
 import AuthButtonsMobile from './auth-buttons-mobile'
-import SocialIcons from '@/components/social-icons'
 import LanguageMenu from './language-menu'
+import Image from 'next/image'
+import Link from 'next/link'
+import SocialIcons from '@/components/social-icons'
 
 const MenuMobile = () => {
   const navContext = useContext(NavContext)
@@ -36,7 +38,15 @@ const MenuMobile = () => {
 }
     >
       <div className='relative flex flex-row justify-between items-center'>
-        <LogoSmall />
+        <Link href='/'>
+          <Image
+            src='/grisocorp.png'
+            alt='logo of griso corp, link to the home page'
+            width={600}
+            height={600}
+            className='w-32 md:w-36'
+          />
+        </Link>
         <span className='mt-3'>
           <button onClick={() => setOpenMenu(false)}>
             <CloseIcon />

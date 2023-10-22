@@ -12,13 +12,13 @@ const AppDownloads = () => {
       <div className='md:w-1/2 flex flex-col justify-center items-center text-center'>
         <div>
           <h2 className='text-4xl font-bold mb-1'>Altas rentabilidades a un solo click</h2>
-          <p className='text-sm'>Invierte de forma sencilla desde tu móvil en nuestros proyectos</p>
+          <p className='text-sm md:text-base mt-3 md:mt-3'>Invierte de forma sencilla desde tu móvil en nuestros proyectos</p>
         </div>
         <div className=''>
           <h4 className='text-[#8fccc9] my-4'>¡DESCÁRGALA YA!</h4>
-          <div className='flex'>
+          <div className='flex flex-col md:flex-row'>
             <Link href='/'>
-              <AppStoreIcon className='mr-7' />
+              <AppStoreIcon className='mb-1 md:mr-7 md:mb-0' />
             </Link>
             <Link href='/'>
               <PlayStoreIcon />

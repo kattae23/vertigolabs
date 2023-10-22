@@ -5,6 +5,7 @@ import Navbar from '../components/navbar/navbar'
 import AuthProvider from '@/context/authprovider'
 import { NavProvider } from '@/context/navContext'
 import React from 'react'
+import Footer from '@/components/footer/footer'
 
 const inter = Rubik({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800', '900'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout ({
             <Navbar />
           </NavProvider>
           {children}
+          <Footer />
         </body>
       </html>
     </AuthProvider>
