@@ -48,7 +48,7 @@ async function Analytics () {
             <AnalyticsCard
               Icon={FaRegMoneyBillAlt}
               className='text-blue-600 text-4xl'
-              fetchText={analytics.returnsAndDeliveries}
+              fetchText={'$ ' + analytics.returnsAndDeliveries + ' M'}
               label='Devoluciones y repartos'
             />
           </div>

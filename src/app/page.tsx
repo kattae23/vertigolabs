@@ -8,13 +8,19 @@ export const runtime = 'edge'
 
 export default function Home () {
   return (
-    <main>
+    <main className='-mt-[96px]'>
       <Hero />
-      <ProjectsContainer buttonLinkText='Ver más proyectos' />
+      <ProjectsContainer
+        {...{
+          buttonLinkText: 'Ver más proyectos',
+          title: 'Proyectos en los que invertir'
+        }}
+      />
       <Analytics />
       <HowItWorks />
       <ProjectsContainer
         {...{
+          title: 'Últimos proyectos devueltos con garantía hipotecaria',
           basicInvestorTop: false,
           investmentInformationAnalytics: false,
           buttonLinkText: 'ver listado completo'

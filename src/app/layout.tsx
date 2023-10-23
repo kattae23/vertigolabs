@@ -22,7 +22,7 @@ export default function RootLayout ({
   return (
     <AuthProvider>
       <html lang='en'>
-        <body className={inter.className}>
+        <body className={inter.className + ' mt-[96px]'}>
           <NavProvider>
             <Navbar />
           </NavProvider>

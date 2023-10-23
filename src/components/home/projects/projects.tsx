@@ -7,9 +7,10 @@ interface ProjectsContainerProps {
   basicInvestorTop?: boolean;
   investmentInformationAnalytics?: boolean;
   buttonLinkText: string;
+  title?: string;
 }
 
-const ProjectsContainer = ({ basicInvestorTop = true, investmentInformationAnalytics = true, buttonLinkText }: ProjectsContainerProps) => {
+const ProjectsContainer = ({ basicInvestorTop = true, investmentInformationAnalytics = true, buttonLinkText, title }: ProjectsContainerProps) => {
   return (
     <section className='w-full h-auto relative flex flex-col p-4 mb-10'>
       {
@@ -26,7 +27,7 @@ const ProjectsContainer = ({ basicInvestorTop = true, investmentInformationAnaly
             )
       }
       <div className='w-full py-5 flex justify-center items-center mt-20 text-center'>
-        <h2 className='text-[26px] md:text-[36px] font-medium text-gray-800'>Projects in which to invest</h2>
+        <h2 className='text-[26px] md:text-[36px] font-medium text-gray-800'>{title}</h2>
       </div>
       <ProjectCard investmentInformationAnalytics={investmentInformationAnalytics} />
       <Button link='/oportunidades'>
