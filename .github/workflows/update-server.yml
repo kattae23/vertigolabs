@@ -1,0 +1,19 @@
+name: Actualizar Servidor de Producción
+
+on:
+  push:
+    branches:
+      - dev 
+
+jobs:
+  actualizar-servidor:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Chequear código en el servidor
+        uses: actions/checkout@v2
+
+      - name: Actualizar servidor de producción
+        run: |
+          cd /root
+          ./updaterepo.sh

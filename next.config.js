@@ -9,6 +9,12 @@ const nextConfig = {
         pathname: '/**'
       },
       {
+        protocol: 'http',
+        hostname: '190.114.9.42',
+        port: '',
+        pathname: '/**'
+      },
+      {
         protocol: 'https',
         hostname: 'vertigolabs.site',
         port: '',
