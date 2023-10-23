@@ -12,7 +12,7 @@ const menuMobileLinks = [
   },
   {
     label: 'Finánciate',
-    value: '/financiacion-empresa'
+    value: '/financiacion-empresas'
   },
   {
     label: 'Nuestra App',
