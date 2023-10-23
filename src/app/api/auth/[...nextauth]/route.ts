@@ -1,5 +1,7 @@
 import NextAuth from 'next-auth/next'
 import CredentialsProvider from 'next-auth/providers/credentials'
+import GoogleProvider from 'next-auth/providers/google'
+import GithubProvider from 'next-auth/providers/github'
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -32,6 +34,14 @@ const handler = NextAuth({
           // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
       }
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!
     })
   ],
   callbacks: {
@@ -44,7 +54,8 @@ const handler = NextAuth({
     }
   },
   pages: {
-    signIn: '/auth/login'
+    signIn: '/auth/login',
+    newUser: '/auth/register'
   }
 })
 
