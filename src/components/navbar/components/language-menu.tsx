@@ -28,7 +28,7 @@ const menuMobileLinks = [
   },
   {
     label: 'Quiénes somos',
-    value: '/quieres-somos'
+    value: '/quienes-somos'
   },
   {
     label: 'Contacta con nosotros',
