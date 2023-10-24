@@ -15,7 +15,18 @@ jobs:
 
       - name: Add github.com to known hosts
         run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      
+
+      - name: Dar permisos de ejecución al script
+        run: chmod +x update.sh
+
+      - name: Node version
+        run: node -v
+
+      - name: Instalar pm2
+        run: npm install pm2 -g
+
+      - name: Instalar pnpm
+        run: npm install -g pnpm
+
       - name: Actualizar servidor de producción
-        run: |
-          ssh usuario@tu_servidor "cd /ruta/a/tu/repositorio && git pull"
+        run: ./update.sh
