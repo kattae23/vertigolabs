@@ -11,9 +11,9 @@ executeCommands() {
  
     npm install || { echo "Failed to execute pnpm install."; exit 1; }
  
-    npm build || { echo "Failed to execute pnpm build."; exit 1; }
+    npm run build || { echo "Failed to execute pnpm build."; exit 1; }
  
-    pm2 restart project || { echo "Failed to execute pm2 restart."; exit 1; }
+    pm2 restart vertigolabs || { echo "Failed to execute pm2 restart."; exit 1; }
 }
  
 executeCommands "./"
