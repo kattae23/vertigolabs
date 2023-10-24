@@ -21,4 +21,4 @@ jobs:
 
       - name: Actualizar servidor de producción
         run: |
-          /var/www/vertigolabs/update.sh
+          ./update.sh
