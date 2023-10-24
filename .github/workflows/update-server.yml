@@ -13,6 +13,9 @@ jobs:
       - name: Chequear código en el servidor
         uses: actions/checkout@v2
 
+      - name: Imprimir directorio actual
+        run: pwd
+
       - name: Actualizar servidor de producción
         run: |
           /var/www/vertigolabs/update.sh
