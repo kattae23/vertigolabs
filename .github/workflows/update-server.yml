@@ -1,21 +1,31 @@
-name: Actualizar Servidor de Producción
+name: Deploy
 
+# Controls when the action will run. 
 on:
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches:
-      - dev 
+    branches: [ dev ]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  actualizar-servidor:
-    runs-on: ubuntu-latest 
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
 
-    steps:
-      - name: Chequear código en el servidor
-        uses: actions/checkout@v4
-
-      - name: Add github.com to known hosts
-        run: ssh-keyscan github.com >> ~/.ssh/known_hosts
-      
-      - name: Actualizar servidor de producción
-        run: |
-          ssh usuario@tu_servidor "cd /ruta/a/tu/repositorio && git pull"
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:       
+    - name: Deploy using ssh
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd /var/www/vertigolabs
+          git pull origin dev
+          git status
+          pnpm install
+          pnpm build
+          pm2 restart vertigolabs
