@@ -7,4 +7,4 @@ executeCommands() {
     pnpm build || { echo "Failed to execute pnpm build."; exi>
     pm2 restart vertigolabs || { echo "Failed to execute pm2 >}
 
-executeCommands "/var/www/vertigolabs"
+executeCommands "./"
