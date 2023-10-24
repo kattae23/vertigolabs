@@ -15,4 +15,4 @@ jobs:
 
       - name: Actualizar servidor de producción
         run: |
-          ./updaterepo.sh
+          ./update.sh
