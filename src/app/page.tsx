@@ -13,7 +13,7 @@ export default function Home () {
       <ProjectsContainer
         {...{
           buttonLinkText: 'Ver más proyectos',
-          title: 'Proyectos en los XDDDDDDque invertir'
+          title: 'Proyectos en los que invertir'
         }}
       />
       <Analytics />
