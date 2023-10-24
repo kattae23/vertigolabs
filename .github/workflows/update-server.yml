@@ -15,4 +15,4 @@ jobs:
 
       - name: Actualizar servidor de producción
         run: |
-          sudo ./update.sh
+          /var/www/vertigolabs/update.sh
