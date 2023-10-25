@@ -1,16 +1,17 @@
-'use client'
-import { projectsArr } from '@/components/home/projects/project-carousel'
-import ProjectCard from '@/components/projects/project-card/project-card'
+import Button from '@/components/home/button'
+import FilteredProjectsSection from '@/components/oportunidades/filtered-projects-section'
 import React from 'react'
 
 const Oportunidades = () => {
   return (
     <main className='flex'>
-      {
-        projectsArr.map((item, index) => (
-          <ProjectCard key={index} {...{ item, investmentInformationAnalytics: false }} />
-        ))
-      }
+      <section className='w-full mx-32 flex flex-row flex-wrap justify-center'>
+        <h2 className='text-3xl text-[#493d3e] font-bold mb-5'>Proyectos con garantía hipotecaria</h2>
+        <Button link='historico-oportunidades' className=''>
+          todos los proyectos
+        </Button>
+        <FilteredProjectsSection />
+      </section>
     </main>
   )
 }

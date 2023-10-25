@@ -14,7 +14,7 @@ interface Props {
 
 const ProjectCard = ({ item, investmentInformationAnalytics = true }: Props) => {
   return (
-    <div className='w-full select-none lg:max-w-[400px] h-auto border-2 rounded-lg py-3'>
+    <div className='w-full select-none lg:max-w-[380px] h-auto border-2 rounded-lg py-3'>
       <div className='px-3'>
         <div className='flex flex-row justify-between pb-2'>
           <div className='flex flex-row'>

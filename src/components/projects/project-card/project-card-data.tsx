@@ -111,6 +111,42 @@ const ProjectCardData = ({ item }: {item: ProjectInfo}) => {
             )
           : null
       }
+      {
+        item.phase === 'unfinanced'
+          ? (
+            <>
+              <div className='flex justify-between font-bold'>
+                <span>Fase:</span>
+                <span>{item.phase === 'unfinanced' && 'No financiado'}</span>
+              </div>
+              <div className='flex justify-between font-bold'>
+                <span>Capital financiado:</span>
+                <span>{item.fundedCapital} $</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Inversores:</span>
+                <span>{item.investors}</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Plazo:</span>
+                <span>{item.term}</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Modalidad:</span>
+                <span>{item.type}</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Rentabilidad anual:</span>
+                <span>{item.annualYield} %</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Rentabilidad total:</span>
+                <span>{item.totalYield} %</span>
+              </div>
+            </>
+            )
+          : null
+      }
     </div>
   )
 }

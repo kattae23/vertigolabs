@@ -13,6 +13,7 @@ export default function Home () {
       <ProjectsContainer
         filter='onfunded'
         {...{
+          investmentInformationAnalytics: true,
           buttonLinkText: 'Ver más proyectos',
           title: 'Proyectos en los que invertir'
         }}
@@ -22,8 +23,6 @@ export default function Home () {
       <ProjectsContainer
         {...{
           title: 'Últimos proyectos devueltos con garantía hipotecaria',
-          basicInvestorTop: false,
-          investmentInformationAnalytics: false,
           buttonLinkText: 'ver listado completo'
         }}
       />
