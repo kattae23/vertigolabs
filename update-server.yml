@@ -1,0 +1,32 @@
+name: Actualizar Servidor de Producción
+
+on:
+  push:
+    branches:
+      - dev 
+
+jobs:
+  actualizar-servidor:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: Chequear código en el servidor
+        uses: actions/checkout@v4
+
+      - name: Add github.com to known hosts
+        run: ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Dar permisos de ejecución al script
+        run: chmod +x update.sh
+
+      - name: Node version
+        run: node -v
+
+      - name: Instalar pm2
+        run: npm install pm2 -g
+
+      - name: Instalar pnpm
+        run: npm install -g pnpm
+
+      - name: Actualizar servidor de producción
+        run: ./update.sh
