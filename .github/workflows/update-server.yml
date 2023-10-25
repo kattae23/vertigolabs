@@ -4,7 +4,7 @@ name: Deploy
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ dev ]
+    branches: [ prod ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,7 +24,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd /var/www/vertigolabs
-          git pull origin dev
+          git pull origin prod
           git status
           pnpm install
           pnpm build

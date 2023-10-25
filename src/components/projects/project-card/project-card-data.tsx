@@ -83,6 +83,34 @@ const ProjectCardData = ({ item }: {item: ProjectInfo}) => {
             )
           : null
       }
+      {
+        item.phase === 'onfunded'
+          ? (
+            <>
+              <div className='flex justify-between font-bold'>
+                <span>Plazo:</span>
+                <span>{item.term}</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Modalidad:</span>
+                <span>{item.type}</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>LTV:</span>
+                <span>{item.LTV} $</span>
+              </div>
+              <div className='flex justify-between'>
+                <span>Rentabilidad anual:</span>
+                <span>{item.annualYield} %</span>
+              </div>
+              <div className='flex justify-between font-bold'>
+                <span>Rentabilidad total:</span>
+                <span>{item.totalYield} %</span>
+              </div>
+            </>
+            )
+          : null
+      }
     </div>
   )
 }

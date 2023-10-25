@@ -4,13 +4,14 @@ import { Hero } from '@/components/home/hero/hero'
 import HowItWorks from '@/components/home/how-it-works/how-it-works'
 import ProjectsContainer from '@/components/home/projects/projects'
 
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 export default function Home () {
   return (
     <main className='-mt-[96px]'>
       <Hero />
       <ProjectsContainer
+        filter='onfunded'
         {...{
           buttonLinkText: 'Ver más proyectos',
           title: 'Proyectos en los que invertir'

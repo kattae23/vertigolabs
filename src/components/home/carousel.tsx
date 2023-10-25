@@ -25,7 +25,6 @@ const Carousel = <T, >({ data, children, slidesPerView = 1, spaceBetween = 0, br
     <Swiper
       slidesPerView={slidesPerView}
       spaceBetween={spaceBetween}
-      loop
       breakpoints={breakpoints}
       speed={400}
       autoplay={{ delay: 2500 }}

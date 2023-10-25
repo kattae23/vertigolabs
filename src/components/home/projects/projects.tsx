@@ -8,6 +8,7 @@ interface ProjectsContainerProps {
   investmentInformationAnalytics?: boolean;
   buttonLinkText: string;
   title?: string;
+  filter?: 'onfunded' | 'funded' | 'finalized';
 }
 
 const ProjectsContainer = ({ basicInvestorTop = true, investmentInformationAnalytics = true, buttonLinkText, title }: ProjectsContainerProps) => {
@@ -29,7 +30,7 @@ const ProjectsContainer = ({ basicInvestorTop = true, investmentInformationAnaly
       <div className='w-full py-5 flex justify-center items-center mt-20 text-center'>
         <h2 className='text-[26px] md:text-[36px] font-medium text-gray-800'>{title}</h2>
       </div>
-      <ProjectCarousel investmentInformationAnalytics={investmentInformationAnalytics} />
+      <ProjectCarousel {...{ investmentInformationAnalytics }} />
       <Button link='/oportunidades'>
         {buttonLinkText}
       </Button>

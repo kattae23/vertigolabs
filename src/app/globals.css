@@ -9,6 +9,10 @@ hr {
   border-top: 1px solid #eee;
 }
 
+.swiper-wrapper {
+  width: 100vw !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

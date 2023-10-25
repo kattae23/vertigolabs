@@ -46,7 +46,7 @@ const ProjectCard = ({ item, investmentInformationAnalytics = true }: Props) => 
                             <BsFillPersonFill />
                             <h3><strong>{item.investors}</strong> inversores</h3>
                           </div>
-                          <h3>{item.dayLeft}</h3>
+                          <h3>{item.dayLeft} días</h3>
                         </div>
                       </>
                       )
