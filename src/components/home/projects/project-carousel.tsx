@@ -28,7 +28,7 @@ export type ProjectInfo = {
 
 export const projectsArr: ProjectInfo[] = [
   {
-    id: crypto.randomUUID(),
+    id: 'JASKDLJDKLJKjasdjakldjas',
     name: 'Splau v4',
     phase: 'finalized',
     fundedCapital: 340000,
@@ -43,7 +43,7 @@ export const projectsArr: ProjectInfo[] = [
     finalIrr: 10.89
   },
   {
-    id: crypto.randomUUID(),
+    id: 'JASKDLJDKLJKjasdjakldjas',
     name: 'Splau v4',
     phase: 'funded',
     fundedCapital: 340000,
