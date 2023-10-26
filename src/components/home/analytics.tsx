@@ -117,9 +117,11 @@ async function Analytics () {
           </div>
         </div>
       </div>
-      <Button link='/estadisticas' className='mb-16'>
-        Consulta la estadística completa
-      </Button>
+      <div className='mt-16'>
+        <Button link='/estadisticas' className='mb-16'>
+          Consulta la estadística completa
+        </Button>
+      </div>
     </section>
   )
 }

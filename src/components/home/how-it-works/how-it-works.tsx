@@ -47,9 +47,11 @@ const HowItWorks = () => {
           </p>
         </div>
       </article>
-      <Button link='/como-funciona'>
-        Más información
-      </Button>
+      <div className='mt-10'>
+        <Button link='/como-funciona'>
+          Más información
+        </Button>
+      </div>
     </section>
   )
 }
