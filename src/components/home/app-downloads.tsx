@@ -7,7 +7,7 @@ const AppDownloads = () => {
   return (
     <section className='flex flex-col justify-center items-center md:flex-row text-[#333333] px-10 md:px-20 mb-20'>
       <div className='md:w-1/2 flex justify-center items-center p-20'>
-        <Image src='/vertigolabs-app-main-2022.png' className='w-full min-w-min' alt='grisocorp app publicity' width={500} height={500} />
+        <Image src='/grisocorp-app-main-2022.png' className='w-full min-w-min' alt='grisocorp app publicity' width={500} height={500} />
       </div>
       <div className='md:w-1/2 flex flex-col justify-center items-center text-center'>
         <div>

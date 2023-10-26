@@ -15,8 +15,7 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     apple: '/icon-512x512.png'
-  },
-  themeColor: '#91CCC9'
+  }
 }
 
 export default function RootLayout ({

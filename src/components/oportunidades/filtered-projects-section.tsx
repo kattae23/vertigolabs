@@ -17,29 +17,29 @@ const FilteredProjectsSection = () => {
   const handleSetFilter = (projectFilter: FilterType['filter']) => () => setFilter(projectFilter)
   return (
     <article className='w-full'>
-      <div className='w-full flex justify-between mt-7 flex-wrap mb-10'>
-        <div className='flex flex-row'>
-          <ButtonFilter {...{ handleSetFilter, filter: 'onfunded' }}>
-            <BsHouseAdd className='mr-4' />
-            En financiación/próximamente ({counterFilteredProjects('onfunded')})
+      <div className='w-full flex justify-between items-center mt-7 flex-nowrap mb-10'>
+        <div className='flex flex-row '>
+          <ButtonFilter {...{ handleSetFilter, filterWanted: 'onfunded', filter }}>
+            <BsHouseAdd className='mr-2 mb-[2px] text-base' />
+            <span className='hidden lg:block'>EN FINANCIACION/PRÓXIMAMENTE ({counterFilteredProjects('onfunded')})</span>
           </ButtonFilter>
-          <ButtonFilter {...{ handleSetFilter, filter: 'funded' }}>
-            <FaMedal />financiados ({counterFilteredProjects('funded')})
+          <ButtonFilter {...{ handleSetFilter, filterWanted: 'funded', filter }}>
+            <FaMedal className='mr-2 text-base' /><span className='hidden lg:block'>FINANCIADOS({counterFilteredProjects('funded')})</span>
           </ButtonFilter>
-          <ButtonFilter {...{ handleSetFilter, filter: 'finalized' }}>
-            <BsHouseLock />cerrados ({counterFilteredProjects('finalized')})
+          <ButtonFilter {...{ handleSetFilter, filterWanted: 'finalized', filter }}>
+            <BsHouseLock className='mr-2 mb-[2px] text-base' /><span className='hidden lg:block'>cerrados({counterFilteredProjects('finalized')})</span>
           </ButtonFilter>
-          <ButtonFilter {...{ handleSetFilter, filter: 'unfinanced' }}>
-            <FiCalendar />no financiados ({counterFilteredProjects('unfinanced')})
+          <ButtonFilter {...{ handleSetFilter, filterWanted: 'unfinanced', filter }}>
+            <FiCalendar className='mr-2 mb-[2px] text-base' /><span className='hidden lg:block'>no financiados ({counterFilteredProjects('unfinanced')})</span>
           </ButtonFilter>
         </div>
-        <div>
+        <div className='flex items-center'>
           <button onClick={() => console.log('pipe')}>
             <HiMagnifyingGlass />
           </button>
         </div>
       </div>
-      <div className='w-full flex flex-row flex-wrap'>
+      <div className='w-full flex flex-row flex-wrap justify-center mb-10'>
         {
           projectsArr.filter(project => project.phase === filter).map((item, index) => (
             <ProjectCard key={index} {...{ item, investmentInformationAnalytics: false }} />
