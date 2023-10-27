@@ -20,7 +20,7 @@ const SectionTwo = () => {
         </div>
       </div>
       <div className='w-full justify-center text-center mt-5 items-center'>
-        <Button link='' className='px-11'>
+        <Button link={'mailto:' + process.env.NEXT_PUBLIC_MAIL} className='px-11'>
           Financiate
         </Button>
       </div>

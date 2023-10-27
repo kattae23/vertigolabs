@@ -14,7 +14,7 @@ const SectionFour = () => {
         </p>
       </div>
       <div className='w-full justify-center text-center mt-5 items-center'>
-        <Button link='' className='px-11'>
+        <Button link={'mailto:' + process.env.NEXT_PUBLIC_MAIL} className='px-11'>
           Guía de empresas
         </Button>
       </div>
