@@ -12,9 +12,17 @@ const inter = Rubik({ subsets: ['latin'], weight: ['300', '400', '500', '600', '
 export const metadata: Metadata = {
   title: 'Griso Corp - Dev',
   description: 'on development',
-  manifest: '/manifest.json',
+  manifest: '/manifest.webmanifest',
   icons: {
-    apple: '/icon-512x512.png'
+    icon: [
+      '/favicon.ico'
+    ],
+    apple: [
+      '/icon-512x512.png'
+    ],
+    shortcut: [
+      'icon-192x192.png'
+    ]
   }
 }
 

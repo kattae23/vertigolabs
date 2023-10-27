@@ -6,7 +6,7 @@ import HowItWorks from '@/components/home/how-it-works/how-it-works'
 import ProjectsContainer from '@/components/home/projects/projects'
 import { ServerRuntime } from 'next'
 
-export const runtime: ServerRuntime = 'edge'
+// export const runtime: ServerRuntime = 'edge'
 
 export default function Home () {
   return (

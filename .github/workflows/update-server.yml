@@ -25,7 +25,7 @@ jobs:
         script: |
           cd /var/www/vertigolabs
           git pull origin prod
-          git status
+          # git status
           pnpm install
           pnpm build
           pm2 restart vertigolabs

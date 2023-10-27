@@ -27,11 +27,11 @@ export const menuLinks = [
   },
   {
     label: 'Acceder',
-    value: '/auth/login'
+    value: '/auth/'
   },
   {
     label: 'Regístrate',
-    value: '/auth/register'
+    value: '/auth/'
   }
 ]
 

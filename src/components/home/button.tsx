@@ -10,7 +10,7 @@ interface ButtonProps {
 const Button = ({ link, children, className }: ButtonProps) => {
   return (
     <div className='w-full flex justify-center items-center'>
-      <Link href={link} className={'px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm uppercase' + ' ' + className}>{children}</Link>
+      <Link href={link} className={'px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm uppercase' + ' ' + className} scroll={false}>{children}</Link>
     </div>
   )
 }
