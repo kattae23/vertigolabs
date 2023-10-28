@@ -1,6 +1,7 @@
 import SectionFive from '@/components/financiacion-empresas/section-five'
 import SectionFour from '@/components/financiacion-empresas/section-four'
 import SectionOne from '@/components/financiacion-empresas/section-one'
+import SectionSeven from '@/components/financiacion-empresas/section-seven'
 import SectionSix from '@/components/financiacion-empresas/section-six'
 import SectionThree from '@/components/financiacion-empresas/section-three'
 import SectionTwo from '@/components/financiacion-empresas/section-two'
@@ -26,6 +27,7 @@ const FinanciacionEmpresasPage = () => {
       <SectionFour />
       <SectionFive />
       <SectionSix />
+      <SectionSeven />
     </main>
   )
 }

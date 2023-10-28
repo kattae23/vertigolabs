@@ -971,3 +971,21 @@ export const PlayStoreIcon = ({ className }: {className?: string}) => (
     </g>
   </svg>
 )
+
+export const GrisoCorpKnowMore = () => (
+  <svg
+    version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='68.036px' height='68.083px' viewBox='0 0 68.036 68.083' enableBackground='new 0 0 68.036 68.083' xmlSpace='preserve'
+  >
+    <g>
+      <circle fillRule='evenodd' clipRule='evenodd' fill='#93CCC8' cx='34.202' cy='33.917' r='33.5' />
+      <circle fill='#FFFFFF' cx='34.642' cy='53.477' r='2.19' />
+
+      <path
+        fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#FFFFFF' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M34.192,44.966c0-3.979,0.67-6.5,1.619-8.25c0.961-1.75,2.23-2.75,3.58-3.7c1.351-0.95,3.09-1.93,4.371-3.26
+c1.149-1.2,2.25-3.44,2.25-6.47c0-2.96-1.521-5.51-3.74-7.28c-2.221-1.76-5.141-2.78-8.08-2.78c-5.881,0-10.67,3.87-11.801,8.32'
+      />
+    </g>
+  </svg>
+)

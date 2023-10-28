@@ -4,11 +4,11 @@ import { GiCheckMark } from 'react-icons/gi'
 
 const SectionThree = () => {
   return (
-    <section className='mt-10 flex text-[#333333] flex-col py-10 px-20 md:px-40 bg-[#C8E5E4]'>
+    <section className='mt-10 flex text-[#333333] flex-col py-10 px-5 md:px-32 bg-[#C8E5E4]'>
       <div className='w-full'>
         <h2 className='text-center font-medium text-4xl'>Ventajas</h2>
       </div>
-      <div className='w-full mt-7 flex flex-col md:flex-row text-sm'>
+      <div className='w-full mt-7 flex flex-col lg:flex-row text-base'>
         <div className='w-full flex flex-col justify-center'>
           <div className='w-full flex relative'>
             <GiCheckMark className='text-white text-4xl absolute z-10' />

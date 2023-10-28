@@ -14,10 +14,10 @@ const menuMobileLinks = [
     label: 'Finánciate',
     value: '/financiacion-empresas'
   },
-  {
-    label: 'Nuestra App',
-    value: '/app'
-  },
+  // {
+  //   label: 'Nuestra App',
+  //   value: '/app'
+  // },
   {
     label: 'Estadísticas',
     value: '/estadisticas'

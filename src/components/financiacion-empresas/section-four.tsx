@@ -3,7 +3,7 @@ import Button from '../home/button'
 
 const SectionFour = () => {
   return (
-    <section className='mt-10 flex text-[#333333] flex-col py-10 px-20 md:px-40'>
+    <section className='mt-10 flex text-[#333333] flex-col py-10 px-3 md:px-32'>
       <div className='w-full'>
         <h2 className='text-center font-medium text-4xl'>Gracias a nuestra plataforma podrás encontrar la financiación que estabas buscando para tu proyecto</h2>
       </div>
