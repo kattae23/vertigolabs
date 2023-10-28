@@ -1,6 +1,7 @@
+import { NavContext } from '@/context/navContext'
 import clsx from 'clsx'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 
 interface Props {
     label: string;
@@ -8,8 +9,16 @@ interface Props {
 }
 
 const AuthButtonsMobile = ({ label, value }: Props) => {
+  const navContext = useContext(NavContext)
+
+  if (!navContext) {
+    return null
+  }
+
+  const { setOpenMenu } = navContext
   return (
     <Link
+      onClick={() => setOpenMenu(false)}
       href={value}
       className={clsx(`text-white 
                     py-2 

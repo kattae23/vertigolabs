@@ -32,7 +32,7 @@ const LanguageMenuMobile = ({ value }: LanguageMenuMobileProps) => {
           )
         ))
             }
-        <button className='absolute top-1 right-[4px]' onClick={() => setOpenLanguageMenu2(false)}>
+        <button aria-label='Close menu language' className='absolute top-1 right-[4px]' onClick={() => setOpenLanguageMenu2(false)}>
           <CloseIcon />
         </button>
       </ul>

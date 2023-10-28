@@ -15,7 +15,7 @@ const AppDownloads = () => {
           <p className='text-sm md:text-base mt-3 md:mt-3'>Invierte de forma sencilla desde tu móvil en nuestros proyectos</p>
         </div>
         <div className=''>
-          <h4 className='text-[#8fccc9] my-4'>¡DESCÁRGALA YA!</h4>
+          <h1 className='text-[#8fccc9] my-4'>¡DESCÁRGALA YA!</h1>
           <div className='flex flex-col md:flex-row'>
             <Link href='/'>
               <AppStoreIcon className='mb-1 md:mr-7 md:mb-0' />

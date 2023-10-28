@@ -66,7 +66,7 @@ const LanguageMenu = ({ label, value }: Props) => {
       >{language}
       </button>
 
-      <button className='absolute top-[8px] right-2' onClick={() => setOpenLanguageMenu2(true)}>
+      <button aria-label='Open menu language' className='absolute top-[8px] right-2' onClick={() => setOpenLanguageMenu2(true)}>
         <IconExpand />
       </button>
       <hr />

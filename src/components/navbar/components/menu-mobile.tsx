@@ -38,7 +38,7 @@ const MenuMobile = () => {
 }
     >
       <div className='relative flex flex-row justify-between items-center'>
-        <Link href='/'>
+        <Link onClick={() => setOpenMenu(false)} href='/'>
           <Image
             src='/grisocorp.png'
             alt='logo of griso corp, link to the home page'

@@ -1,7 +1,7 @@
 'use client'
-import Link from 'next/link'
 import Carousel from '../carousel'
 import Image from 'next/image'
+import Button from '../button'
 
 type CarouselItem = {
   src: string;
@@ -59,7 +59,9 @@ export function Hero () {
             />
             <div className='absolute text-white text-base leading-5 md:text-[1.80rem] font-medium px-14 md:px-72 text-center whites'>
               <h2 className='mb-4 md:leading-10'>{text}</h2>
-              <Link className='py-2 px-4 text-sm bg-[#91CCC9]' href={link}>{buttonText.toUpperCase()}</Link>
+              <Button link={link}>
+                {buttonText}
+              </Button>
             </div>
           </div>
         )}

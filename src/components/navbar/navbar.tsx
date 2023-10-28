@@ -33,7 +33,7 @@ const Navbar = () => {
         }
     >
       <nav className='w-full h-full bg-transparent  flex items-center flex-wrap px-4'>
-        <button onClick={() => setOpenMenu(true)}>
+        <button aria-label='Menu Button' onClick={() => setOpenMenu(true)}>
           {fix ? <MenuIcon styles='fill-[#483C3D]' fill='white' /> : <MenuIcon styles='fill-white' fill='white' />}
         </button>
         <Link href='/' className='ml-4 mb-2'>
