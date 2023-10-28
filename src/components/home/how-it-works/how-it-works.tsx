@@ -4,7 +4,7 @@ import Button from '../button'
 
 const HowItWorks = () => {
   return (
-    <section className='w-full pb-12 h-full bg-[#C8E5E4] flex justify-center items-center text-[#333333] px-5 lg:px-32 flex-col'>
+    <section className='w-full pb-12 h-full bg-[#91CCC9] flex justify-center items-center text-[#333333] px-5 lg:px-32 flex-col'>
       <h2 className=' text-3xl font-medium mt-14 mb-11'>Invest in Griso Corp is easy</h2>
       <article className='w-full h-full flex flex-col lg:flex-row text-center gap-10 justify-center items-center'>
         <div className='flex flex-col w-full lg:w-1/2 justify-center items-center '>

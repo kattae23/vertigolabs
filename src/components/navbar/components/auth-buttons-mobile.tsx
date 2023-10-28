@@ -22,7 +22,7 @@ const AuthButtonsMobile = ({ label, value }: Props) => {
                     text-sm 
                     hover:underline
                     `,
-      label === 'Acceder' ? 'bg-[#4EB4BC]' : 'bg-[#FD7B61]'
+      label === 'Acceder' ? 'bg-[#4EB4BC]' : 'bg-[#91CCC9]'
       )}
     >
       {label.toUpperCase()}
