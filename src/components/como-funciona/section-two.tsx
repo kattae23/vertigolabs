@@ -17,7 +17,7 @@ const SectionTwo = () => {
             </div>
             <ul className='mt-10 [&>li]:mt-5 text-sm'>
               <li>¿Qué es el Crowdfunding?</li>
-              <li>¿Qué es Housers?</li>
+              <li>¿Qué es GrisoCorp?</li>
               <li>¿Qué hacemos?</li>
             </ul>
           </div>
@@ -38,9 +38,9 @@ const SectionTwo = () => {
               <h1 className='text-2xl font-medium ml-6'>Quiero ser <br /> inversor</h1>
             </div>
             <ul className='mt-10 [&>li]:mt-5 text-sm'>
-              <li>¿Por qué es necesario que el inversor se registre en Housers?</li>
+              <li>¿Por qué es necesario que el inversor se registre en GrisoCorp?</li>
               <li>¿Quién puede ser inversor?</li>
-              <li>¿Tiene algún coste registrarse en Housers?</li>
+              <li>¿Tiene algún coste registrarse en GrisoCorp?</li>
             </ul>
           </div>
         </div>
