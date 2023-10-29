@@ -14,5 +14,5 @@ const analyticsArr: AnalyticsArrType = {
 }
 
 export async function GET () {
-  return Response.json({ analyticsArr })
+  return Response.json(analyticsArr)
 }

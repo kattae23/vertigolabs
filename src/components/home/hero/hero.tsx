@@ -53,7 +53,7 @@ export function Hero () {
               width={1200}
               height={900}
               priority
-              src={src}
+              src={process.env.NEXT_PUBLIC_URL + src}
               alt='image 1'
               className='h-[60vh] md:h-[93vh] w-full object-cover'
             />

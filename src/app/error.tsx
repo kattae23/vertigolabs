@@ -26,7 +26,7 @@ const ErrorPage = ({
           <Button onClick={reset}>
             Try again
           </Button>
-          <Link href='/' className={buttonVariants({ variant: 'outline' })}>
+          <Link href={process.env.NEXT_PUBLIC_URL + '/'} className={buttonVariants({ variant: 'outline' })}>
             Go back home
           </Link>
         </div>

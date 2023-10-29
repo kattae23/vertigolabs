@@ -60,17 +60,17 @@ const Footer = () => {
         <div className='flex flex-col lg:flex-row justify-between gap-7 mt-12'>
           <div className='w-full h-full hidden lg:flex flex-col'>
             <Image
-              src='/grisocorp.png'
+              src={process.env.NEXT_PUBLIC_URL + '/grisocorp.png'}
               alt='logo of griso corp, link to the home page'
               width={1000}
               height={300}
               className='w-32 md:w-36'
             />
             <div className='flex flex-col mt-5'>
-              <Link aria-label='Link to download our app on AppStore' href='/'>
+              <Link aria-label='Link to download our app on AppStore' href={process.env.NEXT_PUBLIC_URL + '/'}>
                 <AppStoreIcon className='mb-3' />
               </Link>
-              <Link aria-label='Link to download our app on PlayStore' href='/'>
+              <Link aria-label='Link to download our app on PlayStore' href={process.env.NEXT_PUBLIC_URL + '/'}>
                 <PlayStoreIcon />
               </Link>
             </div>
