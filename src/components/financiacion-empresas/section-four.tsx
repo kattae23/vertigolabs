@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../home/button'
+import Button from '../button'
 
 const SectionFour = () => {
   return (
@@ -9,8 +9,8 @@ const SectionFour = () => {
       </div>
       <div className='w-full mt-7 flex flex-col md:flex-row text-base mb-10'>
         <p className='text-center'>
-          Housers te ofrece como promotor o empresa una forma de financiación rápida, flexible y complementaria al sistema bancario tradicional.
-          Al mismo tiempo funciona como plataforma de publicidad gracias al enorme impacto que muchos proyectos tienen en los medios de comunicación y a la gran base de inversores Housers.
+          GrisoCorp te ofrece como promotor o empresa una forma de financiación rápida, flexible y complementaria al sistema bancario tradicional.
+          Al mismo tiempo funciona como plataforma de publicidad gracias al enorme impacto que muchos proyectos tienen en los medios de comunicación y a la gran base de inversores GrisoCorp.
         </p>
       </div>
       <div className='w-full justify-center text-center mt-5 items-center'>

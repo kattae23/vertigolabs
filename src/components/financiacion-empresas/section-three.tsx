@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../home/button'
+import Button from '../button'
 import { GiCheckMark } from 'react-icons/gi'
 
 const SectionThree = () => {

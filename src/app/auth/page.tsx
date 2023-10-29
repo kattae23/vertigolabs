@@ -25,18 +25,16 @@ export default function AuthenticationPage () {
           Register
         </Link>
         <div className='relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex'>
-          <div className='absolute inset-0 bg-zinc-900' />
+          <div className='absolute inset-0 bg-zinc-900 bg-center bg-no-repeat' style={{ backgroundImage: 'url(/carousel-platform-04.jpg)' }} />
           <div className='relative flex items-center text-lg font-medium'>
             <Image src='/grisocorp.png' alt='logo grisocorp' width={100} height={100} />
           </div>
           <div className='relative z-20 mt-auto'>
             <blockquote className='space-y-2'>
               <p className='text-lg'>
-                &ldquo;This library has saved me countless hours of work and
-                helped me deliver stunning designs to my clients faster than
-                ever before.&rdquo;
+                &ldquo;Esta página me ha ayudado bastante con mis inversiones y han devuelto siempre el total del gasto, un placer trabajar con GrisoCorp!.&rdquo;
               </p>
-              <footer className='text-sm'>Sofia Davis</footer>
+              <footer className='text-sm'>Marcos Franco.</footer>
             </blockquote>
           </div>
         </div>
@@ -74,45 +72,3 @@ export default function AuthenticationPage () {
     </>
   )
 }
-
-// 'use client'
-
-// import { signIn, signOut, useSession } from 'next-auth/react'
-
-// export default function ButtonAuth () {
-//   const { data: session, status } = useSession()
-
-//   if (status === 'loading') {
-//     return <p>Loading...</p>
-//   }
-
-//   if (session) {
-//     return (
-//       <>
-//         Signed in as {session.user?.email} <br />
-//         <pre>
-//           <code>
-//             {JSON.stringify(session, null, 2)}
-//           </code>
-//         </pre>
-//         <button
-//           onClick={() => signOut()}
-//           className='btn btn-danger'
-//         >
-//           Sign out
-//         </button>
-//       </>
-//     )
-//   }
-//   return (
-//     <>
-//       Not signed in <br />
-//       <button
-//         onClick={() => signIn()}
-//         className='btn btn-primary'
-//       >
-//         Sign in
-//       </button>
-//     </>
-//   )
-// }

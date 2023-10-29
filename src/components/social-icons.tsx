@@ -33,27 +33,27 @@ const SocialIcons = ({ footer = false }: Props) => {
     return (
       <div className='w-full flex flex-row flex-wrap text-xl'>
         <Link href='https://facebook.com' className='mr-1 md:mr-5 py-2'>
-          <div className='bg-[#FD7B61] rounded-full p-3 md:p-4 border-2 text-white'>
+          <div className='bg-[#91CCC9] rounded-full p-3 md:p-4 border-2 text-white'>
             <FaFacebookF />
           </div>
         </Link>
         <Link href='https://twitter.com' className='mr-1 md:mr-5 py-2'>
-          <div className='bg-[#FD7B61] rounded-full p-3 md:p-4 border-2 text-white'>
+          <div className='bg-[#91CCC9] rounded-full p-3 md:p-4 border-2 text-white'>
             <BsTwitter />
           </div>
         </Link>
         <Link href='https://youtube.com' className='mr-1 md:mr-5 py-2'>
-          <div className='bg-[#FD7B61] rounded-full p-3 md:p-4 border-2 text-white'>
+          <div className='bg-[#91CCC9] rounded-full p-3 md:p-4 border-2 text-white'>
             <BsYoutube />
           </div>
         </Link>
         <Link href='https://linkedin.com' className='mr-1 md:mr-5 py-2'>
-          <div className='bg-[#FD7B61] rounded-full p-3 md:p-4 border-2 text-white'>
+          <div className='bg-[#91CCC9] rounded-full p-3 md:p-4 border-2 text-white'>
             <BsLinkedin />
           </div>
         </Link>
         <Link href='https://instagram.com' className='mr-1 md:mr-5 py-2'>
-          <div className='bg-[#FD7B61] rounded-full p-3 md:p-4 border-2 text-white'>
+          <div className='bg-[#91CCC9] rounded-full p-3 md:p-4 border-2 text-white'>
             <BsInstagram />
           </div>
         </Link>

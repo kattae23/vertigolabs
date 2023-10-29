@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Button from '../button'
+import Button from '../../button'
 import ProjectCarousel from './project-carousel'
 
 export type FilterType = {

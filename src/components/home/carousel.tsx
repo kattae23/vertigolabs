@@ -27,6 +27,7 @@ const Carousel = <T, >({ data, children, slidesPerView = 1, spaceBetween = 0, br
       spaceBetween={spaceBetween}
       breakpoints={breakpoints}
       speed={400}
+      loop
       autoplay={{ delay: 2500 }}
       pagination
       navigation
