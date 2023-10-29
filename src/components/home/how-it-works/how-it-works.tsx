@@ -1,6 +1,6 @@
 import { GrisoCorpLabsIcon, PersonAdd, ProtectedInvesment, QuarterlyInterest } from '@/components/icons'
 import React from 'react'
-import Button from '../button'
+import Button from '../../button'
 
 const HowItWorks = () => {
   return (
@@ -8,7 +8,7 @@ const HowItWorks = () => {
       <h2 className=' text-3xl font-medium mt-14 mb-11'>Invest in Griso Corp is easy</h2>
       <article className='w-full h-full flex flex-col lg:flex-row text-center gap-10 justify-center items-center'>
         <div className='flex flex-col w-full lg:w-1/2 justify-center items-center '>
-          <PersonAdd />
+          <PersonAdd className='w-[57.75px] h-[50px]' />
           <h2 className='font-bold text-sm mt-5'>
             Create your Griso Corp account and activate it for free
           </h2>

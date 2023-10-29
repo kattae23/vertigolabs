@@ -1,4 +1,4 @@
-import Button from '@/components/home/button'
+import Button from '@/components/button'
 import FilteredProjectsSection from '@/components/oportunidades/filtered-projects-section'
 import React from 'react'
 

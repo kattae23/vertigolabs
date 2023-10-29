@@ -39,7 +39,7 @@ const FilteredProjectsSection = () => {
           </button>
         </div>
       </div>
-      <div className='w-full flex flex-row flex-wrap justify-center mb-10'>
+      <div className='w-full flex flex-row flex-wrap mb-10'>
         {
           projectsArr.filter(project => project.phase === filter).map((item, index) => (
             <ProjectCard key={index} {...{ item, investmentInformationAnalytics: false }} />

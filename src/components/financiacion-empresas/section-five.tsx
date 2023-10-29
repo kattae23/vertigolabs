@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../home/button'
+import Button from '../button'
 import { GrisoCorpKnowMore } from '../icons'
 
 const SectionFive = () => {
@@ -21,14 +21,14 @@ const SectionFive = () => {
             <div className='absolute w-full flex justify-center -top-8 left-0'>
               <GrisoCorpKnowMore />
             </div>
-            <h4 className='mb-2 font-bold'>¿Qué tipo de proyectos se pueden financiar a través de Housers?</h4>
-            <p>Los inversores de Housers pueden financiar proyectos inmobiliarios de tipo empresarial.</p>
+            <h4 className='mb-2 font-bold'>¿Qué tipo de proyectos se pueden financiar a través de GrisoCorp?</h4>
+            <p>Los inversores de GrisoCorp pueden financiar proyectos inmobiliarios de tipo empresarial.</p>
           </div>
           <div className='relative w-full border-[1px] border-solid rounded-sm border-[#91CCC9] bg-white px-5 py-10'>
             <div className='absolute w-full flex justify-center -top-8 left-0'>
               <GrisoCorpKnowMore />
             </div>
-            <h4 className='mb-2 font-bold'>¿Quién puede financiarse con Housers?</h4>
+            <h4 className='mb-2 font-bold'>¿Quién puede financiarse con GrisoCorp?</h4>
             <p>Cualquier empresa válidamente constituida en cualquier Estado de la Unión Europea. En el caso de personas físicas deberá tener su residencia fiscal en cualquier Estado de la Unión Europea.
               Todo ello después de que la plataforma haya realizado un análisis de viabilidad
             </p>
@@ -46,7 +46,7 @@ const SectionFive = () => {
             <div className='absolute w-full flex justify-center -top-8 left-0'>
               <GrisoCorpKnowMore />
             </div>
-            <h4 className='mb-2 font-bold'>¿Qué requisitos hay que cumplir para buscar financiación para tu proyecto con Housers?</h4>
+            <h4 className='mb-2 font-bold'>¿Qué requisitos hay que cumplir para buscar financiación para tu proyecto con GrisoCorp?</h4>
             <p>Deberás disponer de experiencia previa y demostrada y contar como promotor inmobiliario y un proyecto viable que reúna unos requisitos de calidad que más tarde podrá evaluar una empresa de análisis de riesgos externa.</p>
           </div>
           <div className='relative w-full border-[1px] border-solid rounded-sm border-[#91CCC9] bg-white px-5 py-10'>

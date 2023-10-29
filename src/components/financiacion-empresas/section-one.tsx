@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../home/button'
+import Button from '../button'
 import Image from 'next/image'
 
 const SectionOne = () => {
@@ -10,7 +10,6 @@ const SectionOne = () => {
       </div>
       <div className='w-full mt-7 flex md:flex-row'>
         <div>
-
           <p>En GrisoCorp te ayudamos a encontrar financiación para tus proyectos inmobiliarios.</p>
           <ul className='md:w-3/4'>
             <li className='w-full flex mb-5 justify-between mt-5'>

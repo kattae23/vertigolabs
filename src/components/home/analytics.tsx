@@ -1,6 +1,6 @@
 import { AnalyticsArrType } from '@/app/api/analytics/route'
 import React from 'react'
-import Button from './button'
+import Button from '../button'
 import StadisticsBox from '../analytics/stadistics-box'
 
 export async function fetchAnalytics () {

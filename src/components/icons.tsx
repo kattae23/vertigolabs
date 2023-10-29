@@ -270,10 +270,10 @@ c0-0.627,0.488-1.136,1.092-1.136C13.602,6.785,14.091,7.293,14.091,7.921'
 
 )
 
-export const PersonAdd = () => (
+export const PersonAdd = ({ className }: {className: string}) => (
   <svg
-    version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
-    width='50px' height='50px' viewBox='0 0 50 50' enableBackground='new 0 0 50 50' xmlSpace='preserve'
+    version='1.1' className={className} id='Capa_1' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px'
+    viewBox='0 0 50 50' enableBackground='new 0 0 50 50' xmlSpace='preserve'
   >
     <g>
       <circle fillRule='evenodd' clipRule='evenodd' fill='#FFFFFF' cx='38.024' cy='39.176' r='9.631' />
@@ -988,4 +988,294 @@ c1.149-1.2,2.25-3.44,2.25-6.47c0-2.96-1.521-5.51-3.74-7.28c-2.221-1.76-5.141-2.7
       />
     </g>
   </svg>
+)
+
+export const ArrowLeftIcon = () => (
+  <svg
+    version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='80px' height='82.5px' viewBox='0 0 80 82.5' enableBackground='new 0 0 80 82.5' xmlSpace='preserve'
+  >
+    <g>
+      <path
+        fill='#333333' d='M77.603,7.598c-9.11-0.64-18.2-1.62-27.229,0.56c-9.261,2.24-17.83,7.03-24.301,14.04
+c-6.199,6.72-10.141,15.3-11.75,24.25c-0.801,4.461-0.961,9.08-0.52,13.59c0.449,4.531,2.709,8.99,2.82,13.441
+c0.059,2.289-3.221,3.83-4.801,1.969c-3.1-3.66-3.76-9.67-4.26-14.309c-0.58-5.271-0.34-10.551,0.561-15.771
+c1.738-10,6.309-19.57,13.148-27.11c6.971-7.7,16.412-13.09,26.441-15.72c9.99-2.62,21.59-3.05,30.619,2.41
+C79.482,5.648,79.092,7.708,77.603,7.598z'
+      />
+      <path
+        fill='#333333' d='M2.813,61.098c3.061,0.891,4.719,3.721,6.539,6.18c2.42,3.281,4.74,6.641,7.102,9.961l-4.701-0.621
+c3.791-3.539,7.73-8.469,12.41-10.779c2.18-1.08,4.83,1.189,3.471,3.459c-2.67,4.5-7.811,8.012-11.65,11.521
+c-1.52,1.389-3.58,1.01-4.711-0.621c-2.18-3.139-4.389-6.25-6.529-9.41c-1.711-2.539-3.93-5.148-3.73-8.34
+C1.072,61.559,1.893,60.828,2.813,61.098z'
+      />
+    </g>
+  </svg>
+)
+
+export const ArrowRightIcon = () => (
+  <svg
+    version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='80px' height='82.5px' viewBox='0 0 80 82.5' enableBackground='new 0 0 80 82.5' xmlSpace='preserve'
+  >
+    <g>
+      <path
+        fill='#333333' d='M2.397,7.598c9.11-0.64,18.2-1.62,27.23,0.56c9.26,2.24,17.83,7.03,24.3,14.04
+c6.199,6.72,10.141,15.3,11.75,24.25c0.801,4.461,0.961,9.08,0.52,13.59c-0.449,4.531-2.709,8.99-2.82,13.441
+c-0.059,2.289,3.221,3.83,4.801,1.969c3.1-3.66,3.76-9.67,4.26-14.309c0.58-5.271,0.34-10.551-0.561-15.771
+c-1.738-10-6.309-19.57-13.148-27.11c-6.971-7.7-16.412-13.09-26.441-15.72c-9.99-2.62-21.59-3.05-30.62,2.41
+C0.518,5.648,0.908,7.708,2.397,7.598z'
+      />
+      <path
+        fill='#333333' d='M77.188,61.098c-3.061,0.891-4.719,3.721-6.539,6.18c-2.42,3.281-4.74,6.641-7.102,9.961l4.701-0.621
+c-3.791-3.539-7.73-8.469-12.41-10.779c-2.18-1.08-4.83,1.189-3.471,3.459c2.67,4.5,7.811,8.012,11.65,11.521
+c1.52,1.389,3.58,1.01,4.711-0.621c2.18-3.139,4.389-6.25,6.529-9.41c1.711-2.539,3.93-5.148,3.73-8.34
+C78.928,61.559,78.107,60.828,77.188,61.098z'
+      />
+    </g>
+  </svg>
+)
+
+export const IconHowActivate = () => (
+  <svg
+    version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='85.906px' height='120px' viewBox='0 0 85.906 120' enableBackground='new 0 0 85.906 120' xmlSpace='preserve'
+  >
+    <g>
+      <g>
+        <path
+          fill='#949494' d='M20.653,37.855c0,9.332,7.512,16.884,16.795,16.884c9.273,0,16.794-7.552,16.794-16.884
+c0-9.322-7.521-16.884-16.794-16.884C28.165,20.972,20.653,28.533,20.653,37.855z'
+        />
+      </g>
+      <g>
+        <path
+          fillRule='evenodd' clipRule='evenodd' fill='#B4B4B4' d='M37.448,14.993c-12.538,0-22.744,10.256-22.744,22.863
+c0,12.606,10.207,22.862,22.744,22.862c12.537,0,22.736-10.256,22.736-22.862C60.184,25.249,49.984,14.993,37.448,14.993z
+ M37.448,66.559c-15.743,0-28.546-12.882-28.546-28.703c0-15.822,12.803-28.694,28.546-28.694
+c15.734,0,28.537,12.873,28.537,28.694C65.984,53.677,53.182,66.559,37.448,66.559z'
+        />
+      </g>
+      <g>
+        <path
+          fillRule='evenodd' clipRule='evenodd' fill='#D4D4D4' d='M37.448,3.458c-18.87,0-34.209,15.429-34.209,34.397
+c0,18.968,15.339,34.396,34.209,34.396c18.861,0,34.21-15.428,34.21-34.396C71.658,18.887,56.309,3.458,37.448,3.458z
+ M37.448,74.711c-20.217,0-36.658-16.53-36.658-36.855C0.79,17.53,17.231,1,37.448,1c20.208,0,36.65,16.53,36.65,36.855
+C74.098,58.181,57.656,74.711,37.448,74.711z'
+        />
+      </g>
+      <g>
+        <path
+          fill='#333333' d='M85.328,112.697c-2.125-12.215-1.34-22.234-2.656-32.303c-0.6-4.543-0.738-3.924-1.436-9.941l-2.193-7.582
+c-0.609-2.114-2.939-3.382-5.182-2.832l-0.148,0.039c-0.217,0.02-0.432,0.059-0.629,0.108c-0.975,0.235-1.828,0.796-2.398,1.563
+c-1.063-1.908-3.434-2.959-5.734-2.389l-0.088,0.02c-0.236,0.029-0.463,0.069-0.688,0.118c-1.23,0.305-2.301,1.042-2.98,2.054
+c-1.238-1.622-3.619-2.487-5.82-1.946l-0.09,0.02c-0.236,0.029-0.461,0.069-0.688,0.128c-1.172,0.285-2.203,0.974-2.881,1.906
+l-7.455-23.638c-0.775-2.685-2.989-4.081-5.506-3.461l-0.098,0.03c-0.227,0.02-0.453,0.059-0.669,0.118
+c-1.534,0.374-2.871,1.328-3.579,2.547c-0.551,0.964-0.688,2.016-0.394,3.039l8.851,34.091c0.008,0.139,0.039,0.246,0.049,0.295
+c0.816,2.822,1.799,6.461,2.201,9.607c0.414,3.207-4.522,5.686-9.538-1.699c-3.343-4.938-6.047-8.262-8.987-7.789
+c-1.426,0.059-2.636,0.561-3.167,1.318c-0.285,0.393-0.374,0.846-0.246,1.268c0.02,0.078,0.315,1.004,0.62,1.938
+c0.443,1.355,0.629,1.848,0.757,2.084c1.406,3.836,3.402,8.104,6.933,13.748c1.131,1.809,11.653,10.965,17.474,15.477
+c0.158,0.117,5.123,6.018,5.27,6.107C61.52,121.359,86.311,118.342,85.328,112.697z'
+        />
+      </g>
+    </g>
+  </svg>
+)
+
+export const DashboardIcon = ({ className }: {className: string}) => (
+  <svg
+    className={className} version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='139.667px' height='120px' viewBox='0 0 139.667 120' enableBackground='new 0 0 139.667 120' xmlSpace='preserve'
+  >
+    <g>
+
+      <rect x='2.774' y='3' fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' width='134.118' height='97.34' />
+
+      <rect x='17.116' y='15.253' fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' width='39.623' height='12.128' />
+
+      <rect x='17.116' y='37.124' fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' width='39.623' height='12.127' />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='102.73' y1='38.905' x2='108.853' y2='32.755' />
+      <g>
+        <g>
+          <path
+            fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M115.989,41.511h6.562c0-12.453-10.028-22.542-22.396-22.542c-12.376,0-22.407,10.088-22.407,22.542h6.562'
+          />
+        </g>
+        <g>
+
+          <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='100.154' y1='18.969' x2='100.154' y2='25.57' />
+        </g>
+      </g>
+      <g>
+        <g>
+
+          <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='111.85' y1='29.737' x2='115.989' y2='25.57' />
+        </g>
+        <g>
+
+          <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='84.308' y1='25.57' x2='88.858' y2='30.149' />
+        </g>
+      </g>
+      <path
+        fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M104.15,41.511c0,2.222-1.792,4.014-3.996,4.014c-2.213,0-3.994-1.792-3.994-4.014c0-2.223,1.781-4.023,3.994-4.023
+C102.358,37.487,104.15,39.288,104.15,41.511z'
+      />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='17.719' y1='88.088' x2='17.719' y2='76.612' />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='27.471' y1='88.088' x2='27.471' y2='67.654' />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='37.224' y1='88.088' x2='37.224' y2='74.13' />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='46.985' y1='88.088' x2='46.985' y2='58.515' />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='56.738' y1='88.088' x2='56.738' y2='69.503' />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='77.747' y1='64.339' x2='107.033' y2='64.339' />
+      <path
+        fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M122.55,64.339c0,2.817-2.269,5.105-5.076,5.105c-2.798,0-5.078-2.288-5.078-5.105c0-2.825,2.28-5.115,5.078-5.115
+C120.282,59.224,122.55,61.514,122.55,64.339z'
+      />
+
+      <line fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='77.747' y1='82.264' x2='107.033' y2='82.264' />
+      <path
+        fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M122.55,82.264c0,2.825-2.269,5.105-5.076,5.105c-2.798,0-5.078-2.28-5.078-5.105c0-2.816,2.28-5.105,5.078-5.105
+C120.282,77.158,122.55,79.447,122.55,82.264z'
+      />
+
+      <rect x='33.871' y='100.34' fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' width='71.926' height='9.513' />
+
+      <polyline
+        fill='none' stroke='#333333' strokeWidth='4' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' points='
+17.116,117 17.116,109.853 122.55,109.853 122.55,117'
+      />
+    </g>
+  </svg>
+)
+
+export const IconFaqOne = () => (
+  <svg
+    version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='82px' height='82px' viewBox='0 0 82 82' enableBackground='new 0 0 82 82' xmlSpace='preserve'
+  >
+    <circle fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' cx='41' cy='41' r='40' />
+    <g>
+
+      <circle fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' cx='40' cy='27' r='12' />
+
+      <path
+        fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M32,25c1.95-0.83,3.529-2.59,4.359-4.84'
+      />
+
+      <path
+        fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M36.471,18.93C37.75,22.47,41.109,25,45.04,25c1.04,0,2.03-0.18,2.96-0.5'
+      />
+    </g>
+    <path
+      fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M60,59.3v-6.6c0-5.021-4.68-9.7-9.7-9.7H31.7c-5.021,0-9.7,4.68-9.7,9.7v6.6'
+    />
+    <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='square' strokeLinejoin='round' strokeMiterlimit='10' x1='27.5' y1='53.5' x2='27.5' y2='64.5' />
+    <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='square' strokeLinejoin='round' strokeMiterlimit='10' x1='53.5' y1='53.5' x2='53.5' y2='64.5' />
+  </svg>
+)
+
+export const IconFaqTwo = () => (
+  <svg
+    version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='82px' height='82px' viewBox='0 0 82 82' enableBackground='new 0 0 82 82' xmlSpace='preserve'
+  >
+    <circle fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' cx='41' cy='41' r='40' />
+    <g>
+      <g>
+        <path
+          fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' d='
+M34.48,32.959C27.77,35.599,23,42.16,23,49.859C23,59.879,31.061,68,41,68s18-8.121,18-18.141c0-7.699-4.77-14.26-11.48-16.9'
+        />
+
+        <polyline
+          fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' points='
+47.27,25 54,15 28,15 34.73,25'
+        />
+        <g>
+          <path
+            fillRule='evenodd' clipRule='evenodd' fill='#93CCC8' d='M32.18,47.141l-0.449,1.52h1.85v0.529
+c0,0.131,0.04,0.24,0.08,0.35h-2.21L31,51.061h2.859c0.23,0.939,0.601,1.818,1.091,2.648c0.479,0.84,1.06,1.57,1.76,2.211
+c0.69,0.641,1.479,1.141,2.351,1.52C39.939,57.811,40.9,58,41.93,58c0.67,0,1.381-0.07,2.09-0.26
+c0.711-0.191,1.41-0.451,2.041-0.811c0.64-0.34,1.199-0.77,1.719-1.289c0.531-0.512,0.921-1.092,1.221-1.771l-1.46-0.76
+c-0.3,0.6-0.649,1.121-1.069,1.531c-0.41,0.42-0.881,0.77-1.361,1.049c-0.489,0.291-1.01,0.49-1.539,0.6
+c-0.521,0.141-1.041,0.191-1.53,0.191c-0.79,0-1.521-0.131-2.19-0.41c-0.67-0.26-1.289-0.66-1.85-1.141
+c-0.561-0.49-1.029-1.061-1.439-1.709c-0.41-0.66-0.73-1.371-0.92-2.16h6.939l0.49-1.521h-7.65
+c-0.04-0.09-0.061-0.199-0.061-0.33c-0.02-0.139-0.02-0.318-0.02-0.549h8.18l0.451-1.52h-8.5c0.129-0.73,0.379-1.441,0.729-2.121
+c0.34-0.67,0.79-1.25,1.329-1.779c0.541-0.52,1.181-0.93,1.931-1.25c0.75-0.301,1.569-0.471,2.5-0.471
+c0.49,0,0.979,0.051,1.479,0.17c0.49,0.11,0.98,0.281,1.461,0.5c0.47,0.25,0.899,0.57,1.31,0.939
+c0.39,0.381,0.729,0.852,1.03,1.41l1.4-0.789c-0.561-1.109-1.381-2.01-2.5-2.701c-1.131-0.69-2.49-1.05-4.08-1.05
+c-1.221,0-2.301,0.21-3.261,0.6c-0.97,0.41-1.81,0.94-2.521,1.61c-0.709,0.682-1.289,1.432-1.719,2.291
+c-0.44,0.859-0.721,1.74-0.871,2.641H32.18z'
+          />
+        </g>
+
+        <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='35' y1='29' x2='48' y2='29' />
+      </g>
+    </g>
+  </svg>
+)
+
+export const IconFaqThree = () => (
+  <svg
+    version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='82px' height='82px' viewBox='0 0 82 82' enableBackground='new 0 0 82 82' xmlSpace='preserve'
+  >
+    <circle fillRule='evenodd' clipRule='evenodd' fill='#EEEEEE' cx='41' cy='41' r='40' />
+    <g>
+
+      <polyline
+        fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' points='
+22,22 22,60 60,60'
+      />
+      <g>
+
+        <polyline
+          fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' points='
+26,51 39,38 44,43 58,29 '
+        />
+        <g>
+
+          <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' x1='59' y1='36' x2='59' y2='28' />
+
+          <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' x1='59' y1='28' x2='51' y2='28' />
+        </g>
+      </g>
+    </g>
+  </svg>
+)
+
+export const IconArrowDown = () => (
+  <svg
+    version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlnsXlink='http://www.w3.org/1999/xlink' x='0px' y='0px'
+    width='19.748px' height='67px' viewBox='0 0 19.748 67' enableBackground='new 0 0 19.748 67' xmlSpace='preserve'
+  >
+    <g>
+      <path
+        fill='#333333' d='M10.96,0.76c-3.17,2.7-1.97,9.82-2.05,13.63C8.78,20.05,8.74,25.7,8.68,31.36L8.51,48.34
+c-0.02,2.7-0.03,5.391-0.03,8.08c0.01,2.49-0.38,4.109,1.7,5.689c0.44,0.341,1.09,0.531,1.58,0.17c3.47-2.51,2.06-8.68,2.1-12.52
+c0.05-5.93,0.079-11.859,0.12-17.79c0.05-5.92,0.109-11.85,0.08-17.78c-0.021-3.85,1.31-10.67-1.871-13.46
+C11.81,0.39,11.33,0.45,10.96,0.76z'
+      />
+      <path
+        fill='#333333' d='M0.5,46.16c-0.59,2.73,1.85,5.54,3.1,7.83c1.94,3.55,3.56,7.22,4.93,11.029c0.6,1.67,3.06,2.101,3.92,0.391
+c1.681-3.34,3.44-6.65,5.04-10.03c1.05-2.229,2.76-4.5,1.439-6.851c-0.14-0.25-0.5-0.469-0.799-0.42
+c-2.691,0.41-3.391,2.92-4.551,5.181c-1.71,3.33-3.27,6.75-4.89,10.11l3.92,0.39c-1.41-3.729-3.04-7.38-4.96-10.88
+c-1.36-2.48-3.22-6.78-6.34-7.26C0.95,45.6,0.58,45.779,0.5,46.16z'
+      />
+    </g>
+  </svg>
+
 )

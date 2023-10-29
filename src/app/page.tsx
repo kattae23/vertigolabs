@@ -1,14 +1,15 @@
-/* eslint-disable no-unused-vars */
 import Analytics from '@/components/home/analytics'
 import AppDownloads from '@/components/home/app-downloads'
 import { Hero } from '@/components/home/hero/hero'
 import HowItWorks from '@/components/home/how-it-works/how-it-works'
 import ProjectsContainer from '@/components/home/projects/projects'
-import { ServerRuntime } from 'next'
 
 // export const runtime: ServerRuntime = 'edge'
 
+// const session = null
+
 export default function Home () {
+  // if (!session) throw new Error('No hay sesion Iniciada para este usuario')
   return (
     <main className='-mt-[96px]'>
       <Hero />

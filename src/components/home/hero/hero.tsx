@@ -1,7 +1,7 @@
 'use client'
 import Carousel from '../carousel'
 import Image from 'next/image'
-import Button from '../button'
+import Button from '../../button'
 
 type CarouselItem = {
   src: string;
