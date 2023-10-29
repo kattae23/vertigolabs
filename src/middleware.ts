@@ -13,7 +13,7 @@ export function middleware (request: NextRequest) {
     script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com;
     style-src 'unsafe-inline';
     img-src 'self' blob: data: https://upload.wikimedia.org;
-    font-src 'self' https://fonts.googleapis.com;
+    font-src * data: blob: 'unsafe-inline';
     object-src 'none';
     base-uri 'self';
     form-action 'self';
