@@ -8,7 +8,7 @@ import { BsFillCalendarMonthFill } from 'react-icons/bs'
 import { FaBriefcase, FaHandshake, FaPercent, FaRegMoneyBillAlt } from 'react-icons/fa'
 import { IoMdAnalytics } from 'react-icons/io'
 import { TbReload } from 'react-icons/tb'
-import { AnalyticsArrType } from '@/app/api/analytics/route'
+import { AnalyticsArrType } from '@/types/api-types'
 
 const StadisticsBox = ({ analytics }: {analytics: AnalyticsArrType}) => {
   return (

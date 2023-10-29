@@ -1,15 +1,19 @@
-import { AnalyticsArrType } from '@/app/api/analytics/route'
 import React from 'react'
 import Button from '../button'
 import StadisticsBox from '../analytics/stadistics-box'
+import { AnalyticsArrType } from '@/types/api-types'
 
 export async function fetchAnalytics () {
-  const res = await fetch(`${process.env.API_URL}/api/analytics`)
+  const res = await fetch(`${process.env.API_URL}/api/analytics`, { cache: 'force-cache' })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
 
   return res.json() as Promise<AnalyticsArrType>
 }
 
-async function Analytics () {
+const Analytics = async () => {
   const analytics = await fetchAnalytics()
   return (
     <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 md:px-32 flex-col text-[#493d3e]'>

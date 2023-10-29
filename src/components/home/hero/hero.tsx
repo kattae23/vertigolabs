@@ -40,7 +40,7 @@ const imageLinks: CarouselItem[] = [
 export function Hero () {
   return (
     <section className='min-h-fit w-full relative'>
-      <Carousel data={imageLinks}>
+      <Carousel loop data={imageLinks}>
         {({ buttonText, link, src, text }: CarouselItem, index: number) => (
           <div className='relative flex flex-col justify-center items-center'>
             <div

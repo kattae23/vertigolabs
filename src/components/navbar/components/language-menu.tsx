@@ -55,13 +55,8 @@ const LanguageMenu = ({ label, value }: Props) => {
   return (
     <div key={label} className='relative flex flex-col'>
       <button
-        className={clsx(`
-          w-full
-          text-start
-          font-normal
-          text-sm
-         `,
-        fix ? 'text-gray-800' : 'text-gray-800'
+        className={clsx('w-full text-start font-normal text-sm',
+          fix ? 'text-gray-800' : 'text-gray-800'
         )} onClick={() => setOpenLanguageMenu2(!openLanguageMenu2)}
       >{language}
       </button>

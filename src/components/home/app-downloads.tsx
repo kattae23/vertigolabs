@@ -17,10 +17,10 @@ const AppDownloads = () => {
         <div className=''>
           <h1 className='text-[#8fccc9] my-4'>¡DESCÁRGALA YA!</h1>
           <div className='flex flex-col md:flex-row'>
-            <Link href='/'>
+            <Link aria-label='Link to download our app on AppStore' href='/'>
               <AppStoreIcon className='mb-1 md:mr-7 md:mb-0' />
             </Link>
-            <Link href='/'>
+            <Link aria-label='Link to download our app on PlayStore' href='/'>
               <PlayStoreIcon />
             </Link>
           </div>

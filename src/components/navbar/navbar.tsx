@@ -20,15 +20,7 @@ const Navbar = () => {
   return (
     <header
       className={
-          clsx(`
-                w-full
-                fixed
-                top-0
-                left-0
-                z-20
-                transition-all 
-                duration-300
-              `, fix ? 'bg-[#91CCC9] h-[77px]' : 'h-24 bg-transparent'
+          clsx('w-full fixed top-0 left-0 z-20 transition-all duration-300', fix ? 'bg-[#91CCC9] h-[77px]' : 'h-24 bg-transparent'
           )
         }
     >

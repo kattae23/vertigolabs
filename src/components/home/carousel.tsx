@@ -9,6 +9,7 @@ import { CSSSelector, SwiperOptions } from 'swiper/types'
 
 type ArrayComponentProps<T> = {
   data: T[];
+  loop?: boolean;
   children: (item: T, index: number) => React.ReactNode;
   slidesPerView?: number;
   breakpoints?: {
@@ -20,14 +21,14 @@ type ArrayComponentProps<T> = {
   prevEl?: HTMLElement | CSSSelector | null | undefined;
 };
 
-const Carousel = <T, >({ data, children, slidesPerView = 1, spaceBetween = 0, breakpoints, nextEl, prevEl }: ArrayComponentProps<T>) => {
+const Carousel = <T, >({ data, children, loop = false, slidesPerView = 1, spaceBetween = 0, breakpoints, nextEl, prevEl }: ArrayComponentProps<T>) => {
   return (
     <Swiper
       slidesPerView={slidesPerView}
       spaceBetween={spaceBetween}
+      loop={loop}
       breakpoints={breakpoints}
       speed={400}
-      loop
       autoplay={{ delay: 2500 }}
       pagination
       navigation

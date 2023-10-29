@@ -62,15 +62,15 @@ const Footer = () => {
             <Image
               src='/grisocorp.png'
               alt='logo of griso corp, link to the home page'
-              width={600}
-              height={600}
+              width={1000}
+              height={300}
               className='w-32 md:w-36'
             />
             <div className='flex flex-col mt-5'>
-              <Link href='/'>
+              <Link aria-label='Link to download our app on AppStore' href='/'>
                 <AppStoreIcon className='mb-3' />
               </Link>
-              <Link href='/'>
+              <Link aria-label='Link to download our app on PlayStore' href='/'>
                 <PlayStoreIcon />
               </Link>
             </div>

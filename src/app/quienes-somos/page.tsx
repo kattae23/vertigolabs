@@ -2,7 +2,9 @@ import React from 'react'
 
 const UsPage = () => {
   return (
-    <div>UsPage</div>
+    <main className='mt-[96px]'>
+      UsPage
+    </main>
   )
 }
 
