@@ -1,8 +1,9 @@
 import { NavContext } from '@/context/navContext'
 import Link from 'next/link'
 import React, { useContext } from 'react'
+import { Props } from './auth-buttons-mobile'
 
-const MenuMobileLinks = ({ value, label }: {value: string; label: string;}) => {
+const MenuMobileLinks = ({ value, label }: Props) => {
   const navContext = useContext(NavContext)
 
   if (!navContext) {

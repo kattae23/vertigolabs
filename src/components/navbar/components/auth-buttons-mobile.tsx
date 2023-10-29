@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import React, { useContext } from 'react'
 
-interface Props {
+export interface Props {
     label: string;
     value: string;
 }
