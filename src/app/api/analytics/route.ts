@@ -1,17 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
-
-export type AnalyticsArrType = {
-  financedProjects: number,
-  investmentRaised: number,
-  returnedProjects: number,
-  returnsAndDeliveries: number,
-  averageProjectAmount: number;
-  averageLtv: number;
-  averageDurationExpectedProject: string;
-  averageDurationEndOfProject: string;
-  averageIRRAchieved: number;
-  targetAverageIRR: number;
-}
+import { AnalyticsArrType } from '@/types/api-types'
 
 const analyticsArr: AnalyticsArrType = {
   financedProjects: 61,
@@ -26,6 +13,6 @@ const analyticsArr: AnalyticsArrType = {
   targetAverageIRR: 8.23
 }
 
-export async function GET (request: NextRequest) {
-  return new NextResponse(JSON.stringify(analyticsArr))
+export async function GET () {
+  return Response.json({ analyticsArr })
 }

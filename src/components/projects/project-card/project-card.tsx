@@ -22,7 +22,8 @@ const ProjectCard = ({ item, investmentInformationAnalytics = true }: Props) => 
             <div className='h-auto ml-2'>
               <h3>{item.name}</h3>
               <div className='flex flex-row'>
-                <h3 className='text-xs text-gray-500 font-300'>{item.state} | {item.quantity}</h3>
+                <p className='text-xs text-gray-500 font-300'>{item.state} </p>
+                <p className='text-xs text-gray-500 font-300 ml-1'>{item.quantity}</p>
               </div>
             </div>
           </div>

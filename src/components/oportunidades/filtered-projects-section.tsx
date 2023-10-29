@@ -34,7 +34,7 @@ const FilteredProjectsSection = () => {
           </ButtonFilter>
         </div>
         <div className='flex items-center'>
-          <button onClick={() => console.log('pipe')}>
+          <button onClick={() => console.log('e')}>
             <HiMagnifyingGlass />
           </button>
         </div>

@@ -1,5 +1,6 @@
 import { CloseIcon } from '@/components/icons'
 import { NavContext } from '@/context/navContext'
+import clsx from 'clsx'
 import Link from 'next/link'
 import React, { useContext } from 'react'
 
@@ -19,7 +20,7 @@ const LanguageMenuMobile = ({ value }: LanguageMenuMobileProps) => {
 
   const { setLanguage, openLanguageMenu2, setOpenLanguageMenu2 } = navContext
   return (
-    <div className={`absolute top-0 left-0 w-full bg-white pl-2 pr-2 pb-3 text-start py-2 border-[1px] border-gray-300 ${openLanguageMenu2 ? '' : 'hidden'} `}>
+    <div className={clsx('absolute top-0 left-0 w-full bg-white pl-2 pr-2 pb-3 text-start py-2 border-[1px] border-gray-300', openLanguageMenu2 ? '' : 'hidden')}>
       <ul className='relative'>
         {
         value.map(({ label, value }, index) => (

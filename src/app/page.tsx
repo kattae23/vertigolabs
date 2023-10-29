@@ -4,14 +4,11 @@ import { Hero } from '@/components/home/hero/hero'
 import HowItWorks from '@/components/home/how-it-works/how-it-works'
 import ProjectsContainer from '@/components/home/projects/projects'
 
-export const runtime = 'edge'
-
-// const session = null
+// export const runtime = 'edge'
 
 export default function Home () {
-  // if (!session) throw new Error('No hay sesion Iniciada para este usuario')
   return (
-    <main className='-mt-[96px]'>
+    <main className=''>
       <Hero />
       <ProjectsContainer
         filter='onfunded'

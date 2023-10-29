@@ -1237,20 +1237,20 @@ export const IconFaqThree = () => (
     <g>
 
       <polyline
-        fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' points='
+        fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' points='
 22,22 22,60 60,60'
       />
       <g>
 
         <polyline
-          fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' points='
+          fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' points='
 26,51 39,38 44,43 58,29 '
         />
         <g>
 
-          <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' x1='59' y1='36' x2='59' y2='28' />
+          <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='59' y1='36' x2='59' y2='28' />
 
-          <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' stroke-miterlimit='10' x1='59' y1='28' x2='51' y2='28' />
+          <line fillRule='evenodd' clipRule='evenodd' fill='none' stroke='#93CCC8' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' strokeMiterlimit='10' x1='59' y1='28' x2='51' y2='28' />
         </g>
       </g>
     </g>

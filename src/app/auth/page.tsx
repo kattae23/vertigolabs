@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default function AuthenticationPage () {
   return (
-    <>
-      <div className='container relative h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0'>
+    <main className='mt-[96px]'>
+      <section className='container relative h-[800px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0'>
         <Link
           href='/register'
           className={cn(
@@ -68,7 +68,7 @@ export default function AuthenticationPage () {
             </p>
           </div>
         </div>
-      </div>
-    </>
+      </section>
+    </main>
   )
 }

@@ -20,20 +20,8 @@ const MenuMobile = () => {
   return ( // menu como tal
     <div
       className={
-      clsx(`
-      w-[80vw]
-      md:w-80 
-      h-screen 
-      bg-white 
-      overflow-y-scroll
-      top-0 
-      transition-all 
-      duration-700
-      absolute 
-      flex 
-      flex-col 
-      p-8`,
-      openMenu ? 'left-0' : '-left-[1200px]'
+      clsx('w-[80vw] md:w-80 h-screen bg-white overflow-y-scroll top-0 transition-all duration-700 absolute flex flex-col p-8',
+        openMenu ? 'left-0' : '-left-[1200px]'
       )
 }
     >

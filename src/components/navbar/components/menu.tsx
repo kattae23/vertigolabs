@@ -53,19 +53,19 @@ const Menu = () => {
     window.addEventListener('scroll', setFixed)
   }
   return (
-    <ul className='relative hidden md:flex flex-row justify-center items-center'>
+    <div className='relative hidden md:flex flex-row justify-center items-center'>
       {
           menuLinks.map(({ label, value }, index) =>
             typeof value === 'string'
               ? (
-                <Link key={index} href={value} className={`${fix ? 'text-[#483c3d]' : 'text-white'} font-medium text-sm ml-5 hover:underline`}>
+                <Link key={index} href={value} className={clsx('font-medium text-sm ml-5 hover:underline', fix ? 'text-[#483c3d]' : 'text-white')}>
                   {label.toUpperCase()}
                 </Link>
                 )
               : (
                 <div key={label}>
                   <button className={clsx('font-medium text-sm', fix ? 'text-[#483c3d]' : 'text-white')} onClick={() => setOpenLanguageMenu(!openLanguageMenu)}>{language.toUpperCase()}</button>
-                  <ul className={`absolute top-7 left-0 bg-white pl-2 pr-8 pb-3 text-start py-2 border ${openLanguageMenu ? '' : 'hidden'} `}>
+                  <ul className={clsx('absolute top-7 left-0 bg-white pl-2 pr-8 pb-3 text-start py-2 border', openLanguageMenu ? '' : 'hidden')}>
                     {
                   value.map(({ label, value }, index) => (
                     (
@@ -82,7 +82,7 @@ const Menu = () => {
                 )
           )
 }
-    </ul>
+    </div>
   )
 }
 
