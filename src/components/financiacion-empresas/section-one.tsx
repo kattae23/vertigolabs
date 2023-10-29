@@ -36,7 +36,7 @@ const SectionOne = () => {
           <p>En GrisoCorp te ayudamo  s a encontrar financiación para tus proyectos inmobiliarios.</p>
         </div>
         <div className='hidden md:block'>
-          <Image className='w-[350px]' src='/grisocorp-financiacion-agil-para-empresas.jpg' alt='imagen de financiación agil para empresas' width={500} height={500} />
+          <Image className='w-[350px]' src={process.env.NEXT_PUBLIC_URL + '/grisocorp-financiacion-agil-para-empresas.jpg'} alt='imagen de financiación agil para empresas' width={500} height={500} />
         </div>
       </div>
       <div className='w-full justify-center text-center mt-5 items-center'>

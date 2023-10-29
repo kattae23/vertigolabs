@@ -2,25 +2,18 @@ import { NextRequest, NextResponse } from 'next/server'
 export { default } from 'next-auth/middleware'
 export const config = {
   matcher: [
-    '/dashboard/:path*',
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-    {
-      source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
-      missing: [
-        { type: 'header', key: 'next-router-prefetch' },
-        { type: 'header', key: 'purpose', value: 'prefetch' }
-      ]
-    }
+    '/dashboard/:path*'
   ]
 }
+
 export function middleware (request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
   const cspHeader = `
     default-src 'self';
-    script-src 'self' 'nonce-${nonce}' 'strict-dynamic';
-    style-src 'self' 'nonce-${nonce}';
-    img-src 'self' blob: data:;
-    font-src 'self';
+    script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://www.googletagmanager.com;
+    style-src 'unsafe-inline';
+    img-src 'self' blob: data: https://upload.wikimedia.org;
+    font-src 'self' https://fonts.googleapis.com;
     object-src 'none';
     base-uri 'self';
     form-action 'self';

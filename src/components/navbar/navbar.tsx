@@ -28,9 +28,9 @@ const Navbar = () => {
         <button aria-label='Menu Button' onClick={() => setOpenMenu(true)}>
           {fix ? <MenuIcon styles='fill-[#483C3D]' fill='white' /> : <MenuIcon styles='fill-white' fill='white' />}
         </button>
-        <Link href='/' className='ml-4 mb-2'>
+        <Link href={process.env.NEXT_PUBLIC_URL + '/'} className='ml-4 mb-2'>
           <Image
-            src='/grisocorp.png'
+            src={process.env.NEXT_PUBLIC_URL + '/grisocorp.png'}
             alt='logo of griso corp, link to the home page'
             width={600}
             height={600}

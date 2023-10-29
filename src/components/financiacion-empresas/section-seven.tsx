@@ -20,7 +20,7 @@ const SectionSeven = () => {
           </ul>
         </div>
         <div className='hidden lg:block'>
-          <Image className='w-[255px]' src='/grisocorp-quiero-financiar-mi-proyecto.png' alt='imagen de financiación agil para empresas' width={500} height={500} />
+          <Image className='w-[255px]' src={process.env.NEXT_PUBLIC_URL + '/grisocorp-quiero-financiar-mi-proyecto.png'} alt='imagen de financiación agil para empresas' width={500} height={500} />
         </div>
       </div>
       <div className='w-full justify-center text-center mt-10 items-center'>

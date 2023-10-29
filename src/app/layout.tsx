@@ -27,8 +27,6 @@ export const metadata: Metadata = {
     ]
   }
 }
-
-export const revalidate = 600
 const GTM_ID = 'GTM-PQVVHPV6'
 const GA_MEASUREMENT_ID = 'G-RW3V8LZK25'
 
@@ -42,8 +40,8 @@ export default function RootLayout ({
     <AuthProvider>
       <html lang='en'>
         <head>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
-          <Script id='google-analytics'>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} nonce={nonce!} />
+          <Script id='google-analytics' nonce={nonce!}>
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}

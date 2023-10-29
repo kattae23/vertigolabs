@@ -58,7 +58,7 @@ const Menu = () => {
           menuLinks.map(({ label, value }, index) =>
             typeof value === 'string'
               ? (
-                <Link key={index} href={value} className={clsx('font-medium text-sm ml-5 hover:underline', fix ? 'text-[#483c3d]' : 'text-white')}>
+                <Link key={index} href={process.env.NEXT_PUBLIC_URL + value} className={clsx('font-medium text-sm ml-5 hover:underline', fix ? 'text-[#483c3d]' : 'text-white')}>
                   {label.toUpperCase()}
                 </Link>
                 )
@@ -70,7 +70,7 @@ const Menu = () => {
                   value.map(({ label, value }, index) => (
                     (
                       <li key={index}>
-                        <Link href={value} className='text-[#483c3d] font-medium text-sm' onClick={() => setLanguage(label)}>
+                        <Link href={process.env.NEXT_PUBLIC_URL + value} className='text-[#483c3d] font-medium text-sm' onClick={() => setLanguage(label)}>
                           {label.toUpperCase()}
                         </Link>
                       </li>

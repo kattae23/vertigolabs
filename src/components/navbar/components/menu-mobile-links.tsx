@@ -14,7 +14,7 @@ const MenuMobileLinks = ({ value, label }: Props) => {
   return (
     <Link
       onClick={() => setOpenMenu(false)}
-      href={value}
+      href={process.env.NEXT_PUBLIC_URL + value}
       className='text-gray-800 font-normal text-sm pb-4'
     >
       {label}

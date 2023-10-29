@@ -26,7 +26,7 @@ const LanguageMenuMobile = ({ value }: LanguageMenuMobileProps) => {
         value.map(({ label, value }, index) => (
           (
             <li key={`Link for ${label} ` + index + new Date().getTime()} className='pb-2'>
-              <Link href={value} className='text-gray-800 font-normal text-sm' onClick={() => setLanguage(label)}>
+              <Link href={process.env.NEXT_PUBLIC_URL + value} className='text-gray-800 font-normal text-sm' onClick={() => setLanguage(label)}>
                 {label}
               </Link>
             </li>
