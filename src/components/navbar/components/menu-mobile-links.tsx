@@ -15,7 +15,6 @@ const MenuMobileLinks = ({ value, label }: Props) => {
     <Link
       onClick={() => setOpenMenu(false)}
       href={value}
-      onClick={() => setOpenMenu(false)}
       className='text-gray-800 font-normal text-sm pb-4'
     >
       {label}

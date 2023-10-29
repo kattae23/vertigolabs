@@ -20,7 +20,6 @@ const AuthButtonsMobile = ({ label, value }: Props) => {
     <Link
       onClick={() => setOpenMenu(false)}
       href={value}
-      onClick={() => setOpenMenu(false)}
       className={clsx(`text-white 
                     py-2 
                     w-full 
