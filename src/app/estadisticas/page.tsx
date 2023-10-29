@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: ''
 }
 
+export const runtime = 'edge'
+
 const StadisticsPage = async () => {
   const analytics = await fetchAnalytics()
   return (
