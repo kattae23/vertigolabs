@@ -4,7 +4,7 @@ import Button from '../button'
 import StadisticsBox from '../analytics/stadistics-box'
 
 export async function fetchAnalytics () {
-  const res = await fetch(`${process.env.API_URL}/api/analytics`, { cache: 'no-store' })
+  const res = await fetch(`${process.env.API_URL}/api/analytics`)
 
   return res.json() as Promise<AnalyticsArrType>
 }
