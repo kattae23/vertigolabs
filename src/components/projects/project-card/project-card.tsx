@@ -73,7 +73,7 @@ const ProjectCard = ({ item, investmentInformationAnalytics = true }: Props) => 
 
       <div className='w-[95%] mx-auto mt-5 h-[1px] bg-[#CCCCCC]' />
       <div className='w-full px-4 flex flex-col text-xs'>
-        <button className='w-full mt-4 mb-1 shadow-xl bg-[#4EB4BC] py-3 text-center rounded-sm text-white text-xs font-bold'>
+        <button className='w-full mt-4 mb-1 shadow-xl bg-[#3f51b5] py-3 text-center rounded-sm text-white text-xs font-bold'>
           {'Invertir'.toUpperCase()}
         </button>
       </div>

@@ -21,7 +21,7 @@ const AuthButtonsMobile = ({ label, value }: Props) => {
       onClick={() => setOpenMenu(false)}
       href={process.env.NEXT_PUBLIC_URL + value}
       className={clsx('text-white py-2  w-full text-center font-light shadow-md mb-2.5 rounded-sm text-sm hover:underline',
-        label === 'Acceder' ? 'bg-[#4EB4BC]' : 'bg-[#91CCC9]'
+        label === 'Acceder' ? 'bg-[#3f51b5]' : 'bg-[#91CCC9]'
       )}
     >
       {label.toUpperCase()}

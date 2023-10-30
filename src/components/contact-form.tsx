@@ -60,7 +60,7 @@ export function ContactForm () {
                 <Label htmlFor='message'>Message</Label>
                 <Textarea className='min-h-[100px]' id='message' placeholder='Enter your message' />
               </div>
-              <Button className='bg-[#4EB4BC] text-white' type='submit'>
+              <Button className='bg-[#3f51b5] text-white' type='submit'>
                 Send message
               </Button>
             </div>

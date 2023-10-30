@@ -56,14 +56,14 @@ const footerLinks: FooterLinksEntry[] = [
 const Footer = () => {
   return (
     <>
-      <section className='relative bg-[#8FCCC9] w-full h-auto py-5 px-5 md:px-32 lg:px-44'>
+      <section className='relative bg-gradient-to-bl from-gray-700 via-gray-900 to-black w-full h-auto py-5 px-5 md:px-32 lg:px-44'>
         <div className='flex flex-col lg:flex-row justify-between gap-7 mt-12'>
           <div className='w-full h-full hidden lg:flex flex-col'>
             <Image
-              src={process.env.NEXT_PUBLIC_URL + '/grisocorp.png'}
+              src={process.env.NEXT_PUBLIC_URL + '/logo-white.png'}
               alt='logo of griso corp, link to the home page'
-              width={1000}
-              height={300}
+              width={100}
+              height={100}
               className='w-32 md:w-36'
             />
             <div className='flex flex-col mt-5'>
