@@ -18,7 +18,7 @@ const AnalyticsCard = ({ Icon, className, fetchText, label }: Props) => {
         <div className='w-3/4 px-4'>
           <div className='flex flex-col text-center items-center justify-center'>
             <h2 className='font-bold text-lg text-gray-800/90'>{fetchText}</h2>
-            <p className='text-gray-500/90 text-sm font-normal'>{label}</p>
+            <p className='text-gray-500 text-sm font-normal'>{label}</p>
           </div>
         </div>
       </div>

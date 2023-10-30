@@ -34,7 +34,7 @@ const HowItWorksComponent: React.FC<HowItWorksComponentProps> = ({ right, Icon, 
           </p>
           <div className='w-auto mt-5'>
             <div className=''>
-              <Link href={process.env.NEXT_PUBLIC_URL + linkHref} className='px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm uppercase' scroll={false}>{linkText}</Link>
+              <Link href={process.env.NEXT_PUBLIC_URL + linkHref} className='px-4 py-2 bg-[#3f51b5] text-white text-center text-sm rounded-sm uppercase' scroll={false}>{linkText}</Link>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@ const HowItWorksComponent: React.FC<HowItWorksComponentProps> = ({ right, Icon, 
           </p>
           <div className='w-auto mt-5'>
             <div className='/dashboard/mis-datos'>
-              <Link href={process.env.NEXT_PUBLIC_URL + linkHref} className='px-4 py-2 bg-[#FD7B61] text-white text-center text-sm rounded-sm uppercase' scroll={false}>{linkText}</Link>
+              <Link href={process.env.NEXT_PUBLIC_URL + linkHref} className='px-4 py-2 bg-[#3f51b5] text-white text-center text-sm rounded-sm uppercase' scroll={false}>{linkText}</Link>
             </div>
           </div>
         </div>
