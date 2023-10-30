@@ -8,7 +8,7 @@ interface Props {
 
 const FooterLinks = ({ label, href }: Props) => {
   return (
-    <li className='text-base mb-2 text-gray-600 hover:underline'>
+    <li className='text-base mb-2 text-white hover:underline'>
       <Link href={process.env.NEXT_PUBLIC_URL + href}>
         {label}
       </Link>

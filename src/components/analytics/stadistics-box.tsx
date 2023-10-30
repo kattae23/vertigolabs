@@ -54,7 +54,7 @@ const StadisticsBox = ({ analytics }: {analytics: AnalyticsArrType}) => {
             />
             <AnalyticsCard
               Icon={FaPercent}
-              className='text-[#8FCCC9] text-4xl'
+              className='text-[#212023] text-4xl'
               fetchText={analytics.averageLtv + '%'}
               label='LTV medio'
             />
