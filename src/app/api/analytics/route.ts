@@ -1,18 +1,17 @@
-import { AnalyticsArrType } from '@/types/api-types'
+import { promises as fs } from 'fs'
+import { NextRequest, NextResponse } from 'next/server'
+import path from 'path'
 
-const analyticsArr: AnalyticsArrType = {
-  financedProjects: 61,
-  investmentRaised: 19.9,
-  returnedProjects: 15,
-  returnsAndDeliveries: 6.3,
-  averageProjectAmount: 327.623,
-  averageLtv: 53.07,
-  averageDurationExpectedProject: '14 meses',
-  averageDurationEndOfProject: '8 meses',
-  averageIRRAchieved: 8.83,
-  targetAverageIRR: 8.23
-}
+export async function GET (request: NextRequest) {
+  const jsonDirectory = path.join(process.cwd(), 'src/app/api/analytics')
 
-export async function GET () {
-  return Response.json(analyticsArr)
+  const analyticsArr = await fs.readFile(jsonDirectory + '/analytics-arr.json', 'utf8')
+
+  if (!analyticsArr) {
+    return new NextResponse('Internal Error, Talk with an administrator', { status: 500 })
+  }
+
+  console.log(analyticsArr)
+
+  return new NextResponse(analyticsArr, { status: 200 })
 }

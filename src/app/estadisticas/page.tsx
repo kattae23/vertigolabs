@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   description: ''
 }
 
-export const runtime = 'edge'
+// export const runtime = 'edge'
 
 async function fetchAnalytics () {
   try {
     const apiUrl = process.env.API_URL!
     const res = await fetch(`${apiUrl}/analytics`, {
       next: {
-        revalidate: 3600
+        revalidate: 60
       }
     })
     const data = await res.json()
