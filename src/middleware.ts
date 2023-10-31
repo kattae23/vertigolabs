@@ -6,6 +6,11 @@ export const config = {
   ]
 }
 
+export function middleware2 (request: NextRequest) {
+  const requestHeaders = new Headers(request.headers)
+  return NextResponse.next()
+}
+
 export function middleware (request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
   const cspHeader = `

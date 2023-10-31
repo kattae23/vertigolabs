@@ -11,7 +11,5 @@ export async function GET (request: NextRequest) {
     return new NextResponse('Internal Error, Talk with an administrator', { status: 500 })
   }
 
-  console.log(analyticsArr)
-
   return new NextResponse(analyticsArr, { status: 200 })
 }

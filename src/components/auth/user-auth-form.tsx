@@ -126,6 +126,7 @@ export function UserAuthForm ({ className, ...props }: UserAuthFormProps) {
       </div>
       <Button
         variant='outline' type='button' disabled={isLoading} onClick={() => signIn('google', {
+          redirect: false
         })}
       >
         {isLoading
@@ -139,6 +140,7 @@ export function UserAuthForm ({ className, ...props }: UserAuthFormProps) {
       </Button>
       <Button
         variant='outline' type='button' disabled={isLoading} onClick={() => signIn('github', {
+          redirect: false
         })}
       >
         {isLoading
