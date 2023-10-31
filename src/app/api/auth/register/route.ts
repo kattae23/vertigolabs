@@ -3,9 +3,9 @@ import * as bcrypt from 'bcrypt'
 import { NextResponse } from 'next/server'
 
 interface RequestBody {
-  firstName: string;
-  legalName: string;
+  name: string;
   lastName: string;
+  legalName: string;
   phone: string;
   email: string;
   password: string;
@@ -27,10 +27,9 @@ export async function POST (request: Request) {
 
     const user = await prisma.user.create({
       data: {
-        firstName: body.email,
-        legalName: body.legalName,
-        lastName: body.lastName,
         email: body.email,
+        name: body.name,
+        legalName: body.legalName,
         phone: body.phone,
         password: await bcrypt.hash(body.password, 10)
       }

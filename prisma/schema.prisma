@@ -8,69 +8,69 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(uuid())
-  name          String?
-  email         String    @unique
-  legalName     String?
-  lastName      String?
-  secondLastName      String?
-  nacionality   String?
-  nationality       String?
-  phone         String?
-  role          String?   @default("user")
-  emailVerified DateTime?
-  password      String?
-  image         String?
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt()
-  accounts      Account[]
-  gender        Gender?
-  taxResidence  TaxResidence?
+  id                            String    @id @default(uuid())
+  email                         String    @unique
+  createdAt                     DateTime @default(now())
+  updatedAt                     DateTime @updatedAt()
+  accounts                      Account[]
+  name                          String?
+  legalName                     String?
+  lastName                      String?
+  secondLastName                String?
+  nacionality                   String?
+  nationality                   String?
+  phone                         String?
+  role                          String?   @default("user")
+  emailVerified                 DateTime?
+  password                      String?
+  image                         String?
+  gender                        Gender?
+  taxResidence                  TaxResidence?
   identificationDocument        IdentificationDocument?
 }
 
 model TaxResidence {
-  id                String  @id @default(uuid())
-  country     String
-  residentialAddress  String
-  fiscalNumber      String
-  postalCode      Int
-  city        String
-  user        User      @relation(fields: [userId],references: [id])
-  userId      String    @unique
+  id                            String  @id @default(uuid())
+  country                       String
+  residentialAddress            String
+  fiscalNumber                  String
+  postalCode                    Int
+  city                          String
+  user                          User      @relation(fields: [userId],references: [id])
+  userId                        String    @unique
 }
 
 model IdentificationDocument {
-  id                String  @id @default(uuid())
-  documentType      String
-  documentNumber    String
-  frontSideImage    String
-  backSideImage     String
-  city        String
-  user        User      @relation(fields: [userId],references: [id])
-  userId      String    @unique
+  id                            String  @id @default(uuid())
+  documentType                  String
+  documentNumber                String
+  frontSideImage                String
+  backSideImage                 String
+  city                          String
+  user                          User      @relation(fields: [userId],references: [id])
+  userId                        String    @unique
 }
 
 model Gender {
-  id          String    @id  @default(uuid())
-  name        String?
-  user        User      @relation(fields: [userId],references: [id])
-  userId      String    @unique
+  id                            String    @id  @default(uuid())
+  name                          String?
+  user                          User      @relation(fields: [userId],references: [id])
+  userId                        String    @unique
 }
 
 model Account {
-  id                 String  @id @default(uuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                            String  @id @default(uuid())
+  userId                        String
+  type                          String
+  provider                      String
+  providerAccountId             String
+  refresh_token                 String?  @db.Text
+  access_token                  String?  @db.Text
+  expires_at                    Int?
+  token_type                    String?
+  scope                         String?
+  id_token                      String?  @db.Text
+  session_state                 String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
