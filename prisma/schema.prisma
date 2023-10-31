@@ -76,15 +76,3 @@ model Account {
 
   @@unique([provider, providerAccountId])
 }
-
-// model User {
-//   id            String     @id @default(uuid())
-//   email         String  @unique
-//   firstName     String?
-//   legalName     String?
-//   lastName      String?
-//   phone         String?
-//   password      String?
-//   money         String?
-//   // posts    Post[]
-// }
