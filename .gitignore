@@ -9,6 +9,8 @@
 /coverage
 
 updaterepo.sh
+update.sh
+update-server.yml
 
 # next.js
 /.next/
