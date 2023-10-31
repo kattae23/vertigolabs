@@ -28,4 +28,7 @@ jobs:
           # git status
           pnpm install
           pnpm build
+          prisma migrate deploy
+          prisma db pull
+          prisma db push
           pm2 restart vertigolabs
