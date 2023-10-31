@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+updaterepo.sh
+
 # next.js
 /.next/
 /out/
