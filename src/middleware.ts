@@ -8,6 +8,7 @@ export const config = {
 
 export function middleware2 (request: NextRequest) {
   const requestHeaders = new Headers(request.headers)
+  console.log(requestHeaders)
   return NextResponse.next()
 }
 
