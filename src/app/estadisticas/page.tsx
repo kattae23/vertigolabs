@@ -8,8 +8,6 @@ export const metadata: Metadata = {
   description: ''
 }
 
-// export const runtime = 'edge'
-
 async function fetchAnalytics () {
   try {
     const apiUrl = process.env.API_URL!

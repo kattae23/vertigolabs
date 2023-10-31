@@ -1,7 +1,11 @@
+import SignInButton from '@/components/sign-in-button'
 import { NavContext } from '@/context/navContext'
 import clsx from 'clsx'
+import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import { useRouter } from 'next/navigation'
+import React, { useContext, useEffect } from 'react'
+import { FaSignOutAlt } from 'react-icons/fa'
 
 export const menuLinks = [
   {
@@ -36,7 +40,13 @@ export const menuLinks = [
 ]
 
 const Menu = () => {
+  const { status } = useSession()
   const navContext = useContext(NavContext)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (status === 'authenticated') router.push('/')
+  }, [status, router])
 
   if (!navContext) {
     return null
@@ -52,15 +62,20 @@ const Menu = () => {
   if (typeof window !== 'undefined') {
     window.addEventListener('scroll', setFixed)
   }
+
   return (
     <div className='relative hidden md:flex flex-row justify-center items-center'>
       {
-          menuLinks.map(({ label, value }, index) =>
+        status === 'authenticated'
+          ? (
+            <button title='Logout' className={fix ? 'text-zinc-800' : 'text-white'} onClick={() => signOut()}>
+              <FaSignOutAlt />
+            </button>
+            )
+          : menuLinks.map(({ label, value }, index) =>
             typeof value === 'string'
               ? (
-                <Link key={index} href={process.env.NEXT_PUBLIC_URL + value} className={clsx('font-medium text-sm ml-5 hover:underline', fix ? 'text-[#483c3d]' : 'text-white')}>
-                  {label.toUpperCase()}
-                </Link>
+                <SignInButton key={index} {...{ label, value, fix }} />
                 )
               : (
                 <div key={label}>

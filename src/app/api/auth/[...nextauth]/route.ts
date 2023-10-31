@@ -2,8 +2,32 @@ import NextAuth from 'next-auth/next'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
+import { PrismaAdapter } from '@auth/prisma-adapter'
+import prisma from '@/lib/prisma'
+
 const handler = NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+      profile (profile) {
+        return ({
+          id: profile.sub,
+          name: `${profile.given_name}`,
+          legalName: `${profile.given_name}`,
+          lastName: `${profile.family_name ? profile.family_name.split(' ')[0] : ''}`,
+          secondLastName: `${profile.family_name ? profile.family_name.split(' ')[1] : ''}`,
+          email: profile.email,
+          image: profile.picture,
+          role: profile.role ? profile.role : 'user'
+        })
+      }
+    }),
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!
+    }),
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
@@ -34,28 +58,24 @@ const handler = NextAuth({
           // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
       }
-    }),
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!
-    }),
-    GithubProvider({
-      clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!
     })
   ],
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: 'jwt'
+  },
+  debug: process.env.NODE_ENV === 'development',
   callbacks: {
     async jwt ({ token, user }) {
       return { ...token, ...user }
     },
     async session ({ session, token }) {
-      session.user = token as any
+      session.user.role = token.role
       return session
     }
   },
   pages: {
-    signIn: '/auth/',
-    newUser: '/auth/'
+    signIn: '/auth/'
   }
 })
 
