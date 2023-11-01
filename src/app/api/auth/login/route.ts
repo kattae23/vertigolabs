@@ -16,7 +16,7 @@ const formSchema = z.object({
 })
 
 export async function POST (request: Request) {
-  'llegando al login'
+  console.log('llegando al login')
   const body = await request.json()
 
   const response = formSchema.safeParse(body)
@@ -24,18 +24,22 @@ export async function POST (request: Request) {
   if (!response.success) {
     const { errors } = response.error
 
-    return new NextResponse(JSON.stringify({ msg: 'Invalid request', errors }), { status: 400 })
+    return new NextResponse(JSON.stringify({ msg: 'Invalid request', error: errors }), { status: 400 })
   }
 
   const user = await prisma.user.findFirst({
     where: {
-      email: body.username
+      email: body.email
     }
   })
 
-  if (!user) return Response.json({ msg: 'Email incorrecto' }, { status: 401 })
+  console.log('login', user)
 
-  if (!bcrypt.compareSync(user.password!, response.data.password)) return Response.json({ msg: 'Contraseña incorrecta' }, { status: 401 })
+  if (!user) return Response.json({ msg: 'Email incorrecto', error: 'Email no registrado' }, { status: 401 })
+
+  console.log(bcrypt.compareSync(user.password!, response.data.password))
+
+  if (!bcrypt.compareSync(response.data.password, user.password!)) return Response.json({ msg: 'Contraseña incorrecta', error: 'Contraseña incorrecta' }, { status: 401 })
 
   const { password, ...userWithoutPass } = user
 

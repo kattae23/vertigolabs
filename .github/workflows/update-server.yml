@@ -25,7 +25,6 @@ jobs:
         script: |
           cd /var/www/vertigolabs
           git pull origin prod
-          # git status
           pnpm install
           pnpm build
           prisma migrate deploy

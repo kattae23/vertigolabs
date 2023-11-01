@@ -1,13 +1,23 @@
 /* eslint-disable no-unused-vars */
 import { User, UserRole } from '@prisma/client'
-import 'next-auth'
+import { DefaultSession } from 'next-auth'
 import 'next-auth/jwt'
 
 declare module 'next-auth' {
-  interface Sessionn {
-    user: User & {
-      id: string;
+  interface Session {
+    user: DefaultSession['user'] & {
       role: UserRole;
-    }
+      id: string;
+      email: string;
+      token: string;
+    };
+  }
+}
+
+declare module 'next-auth/jwt' {
+  /** Returned by the `jwt` callback and `getToken`, when using JWT sessions */
+  interface JWT {
+    role: UserRole;
+    id: string;
   }
 }
