@@ -10,7 +10,7 @@ interface Props {
 
 const SignInButton = ({ value, label, fix }: Props) => {
   return (
-    <Link href={process.env.NEXT_PUBLIC_URL + value} className={clsx('font-medium text-sm ml-5 hover:underline', fix ? 'text-[#483c3d]' : 'text-white')}>
+    <Link href={process.env.NEXT_PUBLIC_URL + value} className={clsx('hidden md:inline-block font-medium text-sm ml-5 hover:underline', fix ? 'text-[#483c3d]' : 'text-white')}>
       {label.toUpperCase()}
     </Link>
   )

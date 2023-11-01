@@ -15,6 +15,18 @@ export const AuthOptions: NextAuthOptions = {
       return session
     }
   },
+  // jwt: {
+  //   maxAge: 60 * 60 * 24 * 30,
+  //   async encode ({ secret, token }) {
+  //     return jwt.sign(token!, secret)
+  //   },
+  //   async decode ({ secret, token }) {
+  //     const decode = jwt.verify(token!, secret, { algorithms: ['HS256'] })
+
+  //     return decode as unknown as JWT
+  //   }
+  // },
+  secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: '/auth/login'
   },
@@ -65,8 +77,6 @@ export const AuthOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
       profile (profile) {
-        console.log(profile)
-
         return ({
           id: profile.sub,
           name: `${profile.given_name}`,

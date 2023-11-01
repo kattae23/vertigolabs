@@ -1,20 +1,24 @@
-import { withAuth } from 'next-auth/middleware'
+import { NextRequestWithAuth, withAuth } from 'next-auth/middleware'
+import { NextResponse } from 'next/server'
+
+const baseUrl = process.env.NEXTAUTH_URL!
 
 export default withAuth(
-  // `withAuth` augments your `Request` with the user's token.
-  function middleware (req) {
-    console.log(req.nextauth.token?.role)
+  function middleware (req: NextRequestWithAuth) {
+    if (req.nextUrl.pathname.startsWith('/admin') && req.nextauth.token?.role !== 'admin') { return NextResponse.rewrite(new URL('/denied', baseUrl)) }
+    if (req.nextUrl.pathname.startsWith('/client') && req.nextauth.token?.role !== 'user' && req.nextauth.token?.role !== 'admin') { return NextResponse.rewrite(new URL('/denied', baseUrl)) }
   },
   {
     callbacks: {
-      authorized: ({ req, token }) => {
-        if (req.nextUrl.pathname === '/admin') {
-          return token?.role === 'admin'
-        }
-        return Boolean(token)
+      authorized: ({ token }) => {
+        if (token) return !!token
+        return false
       }
+    },
+    pages: {
+      signIn: '/auth/login'
     }
   }
 )
 
-export const config = { matcher: ['/admin/:path*', '/client/:path*'] }
+export const config = { matcher: ['/admin/:path*', '/client/:path*', '/denied'] }

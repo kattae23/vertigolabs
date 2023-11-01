@@ -58,7 +58,7 @@ const Menu = () => {
   }
 
   return (
-    <div className='relative hidden md:flex flex-row justify-center items-center'>
+    <div className='relative flex flex-row justify-center items-center'>
       {
         status === 'authenticated'
           ? (
@@ -72,7 +72,7 @@ const Menu = () => {
                 <SignInButton key={index} {...{ label, value, fix }} />
                 )
               : (
-                <div key={label}>
+                <div key={label} className='hidden md:flex'>
                   <button className={clsx('font-medium text-sm', fix ? 'text-[#483c3d]' : 'text-white')} onClick={() => setOpenLanguageMenu(!openLanguageMenu)}>{language.toUpperCase()}</button>
                   <ul className={clsx('absolute top-7 left-0 bg-white pl-2 pr-8 pb-3 text-start py-2 border', openLanguageMenu ? '' : 'hidden')}>
                     {

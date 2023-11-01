@@ -46,7 +46,11 @@ export async function POST (request: Request) {
       }
     })
 
-    const { password, ...result } = user
+    const { password, ...userWithoutPass } = user
+
+    const result = {
+      ...userWithoutPass
+    }
 
     return Response.json(result, { status: 201 })
   } catch (error) {
