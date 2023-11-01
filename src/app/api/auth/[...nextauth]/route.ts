@@ -2,11 +2,11 @@ import NextAuth from 'next-auth/next'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
-import { PrismaAdapter } from '@auth/prisma-adapter'
+import { NextAuthOptions } from 'next-auth'
 import prisma from '@/lib/prisma'
+import { PrismaAdapter } from '@auth/prisma-adapter'
 
-const handler = NextAuth({
-  adapter: PrismaAdapter(prisma),
+export const AuthOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -20,13 +20,27 @@ const handler = NextAuth({
           secondLastName: `${profile.family_name ? profile.family_name.split(' ')[1] : ''}`,
           email: profile.email,
           image: profile.picture,
-          role: profile.role ? profile.role : 'user'
+          role: process.env.NODE_ENV === 'production' ? profile.role ?? 'user' : profile.role ?? 'admin'
         })
       }
     }),
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET!
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      profile (profile) {
+        console.log(profile)
+
+        return ({
+          id: profile.sub,
+          name: `${profile.given_name}`,
+          legalName: `${profile.given_name}`,
+          lastName: `${profile.family_name ? profile.family_name.split(' ')[0] : ''}`,
+          secondLastName: `${profile.family_name ? profile.family_name.split(' ')[1] : ''}`,
+          email: profile.email,
+          image: profile.picture,
+          role: process.env.NODE_ENV === 'production' ? profile.role ?? 'user' : profile.role ?? 'admin'
+        })
+      }
     }),
     CredentialsProvider({
       name: 'Credentials',
@@ -34,49 +48,55 @@ const handler = NextAuth({
         email: { label: 'email', type: 'text', placeholder: 'Email' },
         password: { label: 'Password', type: 'password' }
       },
-      async authorize (credentials, req) {
-        const res = await fetch(`${process.env.API_URL}/auth/login`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: credentials?.email,
-            password: credentials?.password
+      async authorize (credentials) {
+        try {
+          console.log(process.env.API_URL + '/auth/login')
+          const res = await fetch(`${process.env.API_URL}/auth/login`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              email: credentials?.email,
+              password: credentials?.password
+            })
           })
-        })
-
-        const user = await res.json()
-
-        if (user) {
-          // Any object returned will be saved in `user` property of the JWT
-          return user
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null
-
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+          const user = await res.json()
+          if (user) {
+            return user
+          } else {
+            return null
+          }
+        } catch (error) {
+          // console.log(error)
+          throw new Error('aqui ta el error')
         }
       }
     })
   ],
-  secret: process.env.NEXTAUTH_SECRET,
   session: {
-    strategy: 'jwt'
+    strategy: 'jwt',
+    maxAge: 24 * 60 * 60
   },
-  debug: process.env.NODE_ENV === 'development',
+  jwt: {
+    secret: process.env.NEXTAUTH_SECRET,
+    maxAge: 60 * 60 * 24 * 30
+  },
+  adapter: PrismaAdapter(prisma as any),
   callbacks: {
     async jwt ({ token, user }) {
       return { ...token, ...user }
     },
     async session ({ session, token }) {
-      session.user.role = token.role
+      session.user = token
       return session
     }
   },
   pages: {
-    signIn: '/auth/'
+    signIn: '/auth/login'
   }
-})
+}
+
+const handler = NextAuth(AuthOptions)
 
 export { handler as GET, handler as POST }

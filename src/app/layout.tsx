@@ -7,7 +7,6 @@ import { NavProvider } from '@/context/navContext'
 import React from 'react'
 import Footer from '@/components/footer/footer'
 import Script from 'next/script'
-import { headers } from 'next/headers'
 
 const inter = Rubik({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800', '900'] })
 
@@ -38,13 +37,12 @@ export default function RootLayout ({
 }: {
   children: React.ReactNode
 }) {
-  const nonce = headers().get('x-nonce')
   return (
     <AuthProvider>
       <html lang='en'>
         <head>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} nonce={nonce!} />
-          <Script id='google-analytics' nonce={nonce!}>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
+          <Script id='google-analytics'>
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -53,7 +51,7 @@ export default function RootLayout ({
               gtag('config', '${GA_MEASUREMENT_ID}');
             `}
           </Script>
-          <Script id='google-tag-manager' strategy='afterInteractive' nonce={nonce!}>
+          <Script id='google-tag-manager' strategy='afterInteractive'>
             {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
