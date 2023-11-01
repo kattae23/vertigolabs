@@ -3,7 +3,7 @@
 
 import * as React from 'react'
 
-import { Button } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useForm } from 'react-hook-form'
 import * as z from 'zod'
@@ -20,8 +20,10 @@ import {
 import { Icons } from '../icons-shad-cn'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
+import { cn } from '@/lib/utils'
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserLoginFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 const formSchema = z.object({
   email: z.string().min(2, {
@@ -34,7 +36,7 @@ const formSchema = z.object({
   })
 })
 
-export function UserAuthForm ({ className, ...props }: UserAuthFormProps) {
+export function UserLoginForm ({ className, ...props }: UserLoginFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [error, setError] = React.useState<string | null>(null)
   const router = useRouter()
@@ -49,9 +51,6 @@ export function UserAuthForm ({ className, ...props }: UserAuthFormProps) {
 
   async function onSubmit (values: z.infer<typeof formSchema>) {
     setIsLoading(true)
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
 
     const res = await signIn('credentials', {
       redirect: false,
@@ -61,17 +60,25 @@ export function UserAuthForm ({ className, ...props }: UserAuthFormProps) {
     })
     if (res?.error) {
       setError(res?.error)
+      console.log(res)
     } else {
       setError(null)
     }
     if (res?.url) router.push(res.url)
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+    setIsLoading(false)
   }
 
   return (
     <Form {...form}>
+      <Link
+        href={process.env.NEXT_PUBLIC_URL + '/auth/register'}
+        className={cn(
+          buttonVariants({ variant: 'ghost' }),
+          'absolute right-4 top-20 md:right-8 md:top-32'
+        )}
+      >
+        Register
+      </Link>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
         <FormField
           control={form.control}
@@ -111,7 +118,7 @@ export function UserAuthForm ({ className, ...props }: UserAuthFormProps) {
           }
         </Button>
         <div className='text-red-400 text-md text-center rounded p-2'>
-          {error}
+          {error && JSON.stringify(error)}
         </div>
       </form>
       <div className='relative'>

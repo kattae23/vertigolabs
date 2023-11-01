@@ -12,7 +12,7 @@ services:
       MYSQL_ROOT_PASSWORD: 73CMdunRhczkB3ih
       MYSQL_USER: prisma
       MYSQL_PASSWORD: 12345678
-      MYSQL_DATABASE: mydb
+      MYSQL_DATABASE: prisma
     volumes:
       - ./dbdata:/var/lib/mysql
 volumes:

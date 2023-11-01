@@ -1,16 +1,13 @@
 /* eslint-disable no-unused-vars */
-import NextAuth from 'next-auth'
-import { User } from '@prisma/client'
-import { JWT } from 'next-auth/jwt'
+import { User, UserRole } from '@prisma/client'
+import 'next-auth'
+import 'next-auth/jwt'
 
 declare module 'next-auth' {
-  interface Session {
-    user: User;
+  interface Sessionn {
+    user: User & {
+      id: string;
+      role: UserRole;
+    }
   }
-}
-
-declare module 'next-auth/jwt' {
-  type JWT = {
-    role: string;
-  };
 }
