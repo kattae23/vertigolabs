@@ -3,8 +3,7 @@ import { NavContext } from '@/context/navContext'
 import clsx from 'clsx'
 import { signOut, useSession } from 'next-auth/react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { FaSignOutAlt } from 'react-icons/fa'
 
 export const menuLinks = [
@@ -42,11 +41,6 @@ export const menuLinks = [
 const Menu = () => {
   const { status } = useSession()
   const navContext = useContext(NavContext)
-  const router = useRouter()
-
-  useEffect(() => {
-    if (status === 'authenticated') router.push('/')
-  }, [status, router])
 
   if (!navContext) {
     return null

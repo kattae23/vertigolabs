@@ -36,9 +36,6 @@ const nextConfig = {
         pathname: '/**'
       }
     ]
-  },
-  httpAgentOptions: {
-    keepAlive: false
   }
 }
 

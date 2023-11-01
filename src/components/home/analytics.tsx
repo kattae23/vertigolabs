@@ -5,7 +5,7 @@ import { AnalyticsArrType } from '@/types/api-types'
 
 async function fetchAnalytics () {
   try {
-    const apiUrl = process.env.API_URL!
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL!
     const res = await fetch(`${apiUrl}/analytics`, {
       next: {
         revalidate: 3600
