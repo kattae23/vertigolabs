@@ -1,4 +1,3 @@
-import { signJwtAccessToken } from '@/lib/jwt'
 import prisma from '@/lib/prisma'
 import * as bcrypt from 'bcrypt'
 import { NextResponse } from 'next/server'
@@ -37,16 +36,12 @@ export async function POST (request: Request) {
 
   if (!user) return Response.json({ msg: 'Email incorrecto', error: 'Email no registrado' }, { status: 401 })
 
-  console.log(bcrypt.compareSync(user.password!, response.data.password))
-
   if (!bcrypt.compareSync(response.data.password, user.password!)) return Response.json({ msg: 'Contraseña incorrecta', error: 'Contraseña incorrecta' }, { status: 401 })
 
   const { password, ...userWithoutPass } = user
 
-  const accessToken = signJwtAccessToken(userWithoutPass)
   const result = {
-    ...userWithoutPass,
-    accessToken
+    ...userWithoutPass
   }
   return Response.json(result, { status: 200 })
 }
