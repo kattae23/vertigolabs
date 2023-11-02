@@ -9,7 +9,7 @@ export async function fetchAnalytics () {
         revalidate: 3600
       }
     })
-    console.log('res', res.json())
+    console.log('res', await res.json())
     const data = await res.json()
     return data as Promise<AnalyticsArrType>
   } catch (error) {
