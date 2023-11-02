@@ -5,9 +5,6 @@ export async function fetchAnalytics () {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL!
     console.log('apiUrl', apiUrl)
     const res = await fetch(`${apiUrl}/analytics`, {
-      next: {
-        revalidate: 3600
-      }
     })
     console.log('res', await res.json())
     const data = await res.json()
