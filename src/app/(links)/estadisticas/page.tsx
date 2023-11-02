@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 
 const StadisticsPage = async () => {
   const analytics = await fetchAnalytics()
-  console.log(analytics)
   return (
     <main className='mb-10 mt-[96px]'>
       <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 md:px-32 flex-col text-[#493d3e]'>
