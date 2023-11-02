@@ -1,5 +1,5 @@
 import StadisticsBox from '@/components/analytics/stadistics-box'
-import { AnalyticsArrType } from '@/types/api-types'
+import { fetchAnalytics } from '@/lib/fetch-analytics'
 import { Metadata } from 'next'
 import React, { Suspense } from 'react'
 
@@ -8,24 +8,9 @@ export const metadata: Metadata = {
   description: ''
 }
 
-async function fetchAnalytics () {
-  try {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL!
-    const res = await fetch(`${apiUrl}/analytics`, {
-      next: {
-        revalidate: 60
-      }
-    })
-    const data = await res.json()
-    return data as Promise<AnalyticsArrType>
-  } catch (error) {
-    console.log(error)
-    throw new Error('error fetching data.')
-  }
-}
-
 const StadisticsPage = async () => {
   const analytics = await fetchAnalytics()
+  console.log(analytics)
   return (
     <main className='mb-10 mt-[96px]'>
       <section className='w-full h-auto bg-[#EEEEEE] flex justify-center items-center px-5 md:px-32 flex-col text-[#493d3e]'>
