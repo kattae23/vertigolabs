@@ -63,7 +63,7 @@ export function UserLoginForm ({ className, ...props }: UserLoginFormProps) {
     } else {
       setError(null)
     }
-    if (res?.url) router.push(res.url)
+    if (res?.url) router.push('/client/dashboard')
     setIsLoading(false)
   }
 

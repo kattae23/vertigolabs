@@ -5,12 +5,12 @@ import 'next-auth/jwt'
 
 declare module 'next-auth' {
   interface Session {
-    user: DefaultSession['user'] & {
+    user: {
       role: UserRole;
       id: string;
       email: string;
       token: string;
-    };
+    } & User;
   }
 }
 
