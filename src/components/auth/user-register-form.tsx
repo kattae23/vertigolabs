@@ -98,7 +98,7 @@ export function UserRegisterForm ({ className, ...props }: UserRegisterFormProps
     } else {
       setError(null)
     }
-    if (res?.url) router.push(res.url)
+    if (res?.url) router.push('/client/dashboard')
     setIsLoading(false)
   }
 

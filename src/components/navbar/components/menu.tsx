@@ -1,10 +1,10 @@
 import SignInButton from '@/components/sign-in-button'
 import { NavContext } from '@/context/navContext'
 import clsx from 'clsx'
-import { signOut, useSession } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
 import Link from 'next/link'
 import React, { useContext } from 'react'
-import { FaSignOutAlt } from 'react-icons/fa'
+import { UserNav } from '../user-navbar'
 
 export const menuLinks = [
   {
@@ -62,9 +62,13 @@ const Menu = () => {
       {
         status === 'authenticated'
           ? (
-            <button title='Logout' className={fix ? 'text-zinc-800' : 'text-white'} onClick={() => signOut()}>
-              <FaSignOutAlt />
-            </button>
+            <>
+              <div className='flex justify-center items-center'>
+                <div className='mr-3'>
+                  <UserNav />
+                </div>
+              </div>
+            </>
             )
           : menuLinks.map(({ label, value }, index) =>
             typeof value === 'string'
