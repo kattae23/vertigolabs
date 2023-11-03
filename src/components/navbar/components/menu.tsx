@@ -46,7 +46,7 @@ const Menu = () => {
     return null
   }
 
-  const { fix, setFix, openLanguageMenu, setOpenLanguageMenu, language, setLanguage } = navContext
+  const { fix, setFix, fixWork, openLanguageMenu, setOpenLanguageMenu, language, setLanguage } = navContext
 
   function setFixed () {
     if (window.scrollY >= 50) setFix(true)
@@ -73,11 +73,11 @@ const Menu = () => {
           : menuLinks.map(({ label, value }, index) =>
             typeof value === 'string'
               ? (
-                <SignInButton key={index} {...{ label, value, fix }} />
+                <SignInButton key={index} {...{ label, value, fix, fixWork }} />
                 )
               : (
                 <div key={label} className='hidden md:flex'>
-                  <button className={clsx('font-medium text-sm', fix ? 'text-[#483c3d]' : 'text-white')} onClick={() => setOpenLanguageMenu(!openLanguageMenu)}>{language.toUpperCase()}</button>
+                  <button className={clsx('font-medium text-sm', fixWork ? fix ? 'text-[#483c3d]' : 'text-white' : 'text-[#483c3d]')} onClick={() => setOpenLanguageMenu(!openLanguageMenu)}>{language.toUpperCase()}</button>
                   <ul className={clsx('absolute top-7 left-0 bg-white pl-2 pr-8 pb-3 text-start py-2 border', openLanguageMenu ? '' : 'hidden')}>
                     {
                   value.map(({ label, value }, index) => (

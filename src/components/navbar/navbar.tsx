@@ -26,7 +26,7 @@ const Navbar = () => {
     >
       <nav className='w-full h-full bg-transparent  flex items-center flex-wrap px-4'>
         <button aria-label='Menu Button' onClick={() => setOpenMenu(true)}>
-          {fix ? <MenuIcon styles='fill-[#483C3D]' fill='white' /> : <MenuIcon styles='fill-white' fill='white' />}
+          {fixWork ? fix ? <MenuIcon styles='fill-[#483C3D]' fill='white' /> : <MenuIcon styles='fill-white' fill='white' /> : <MenuIcon styles='fill-[#483C3D]' fill='white' />}
         </button>
         <Link href={process.env.NEXT_PUBLIC_URL + '/'} className='ml-4 mb-2'>
           <Image

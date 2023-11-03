@@ -21,14 +21,14 @@ export const NavContext = createContext<NavContextProps | undefined>(undefined)
 export function NavProvider ({ children }: {children: ReactNode}) {
   const pathName = usePathname()
   const [fix, setFix] = useState(false)
-  const [fixWork, setFixWork] = useState(false)
+  const [fixWork, setFixWork] = useState(true)
   const [openLanguageMenu, setOpenLanguageMenu] = useState(false)
   const [openLanguageMenu2, setOpenLanguageMenu2] = useState(false)
   const [language, setLanguage] = useState('Spanish')
   const [openMenu, setOpenMenu] = useState(false)
 
   useEffect(() => {
-    if (pathName === '/') {
+    if (pathName === '/' || pathName === '/como-funciona' || pathName === '/financiacion-empresas') {
       setFixWork(true)
     } else {
       setFixWork(false)
