@@ -23,7 +23,7 @@ export default async function Layout ({
           <div className='relative flex items-center text-lg font-medium'>
             <Image src={process.env.NEXT_PUBLIC_URL + '/grisocorp.png'} alt='logo grisocorp' width={100} height={100} />
           </div>
-          <div className='relative z-20 mt-auto'>
+          <div className='relative z-10 mt-auto'>
             <blockquote className='space-y-2'>
               <p className='text-lg'>
                 &ldquo;Esta página me ha ayudado bastante con mis inversiones y han devuelto siempre el total del gasto, un placer trabajar con GrisoCorp!.&rdquo;
