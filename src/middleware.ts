@@ -6,7 +6,6 @@ const baseUrl = process.env.NEXTAUTH_URL!
 export default withAuth(
   function middleware (req: NextRequestWithAuth) {
     if (req.nextUrl.pathname.startsWith('/admin') && req.nextauth.token?.role !== 'admin') { return NextResponse.rewrite(new URL('/denied', baseUrl)) }
-    console.log(req.nextauth.token?.role)
     if (req.nextUrl.pathname.startsWith('/client') && req.nextauth.token?.role !== 'user' && req.nextauth.token?.role !== 'admin') { return NextResponse.rewrite(new URL('/denied', baseUrl)) }
   },
   {
