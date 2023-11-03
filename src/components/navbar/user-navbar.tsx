@@ -48,41 +48,36 @@ export function UserNav () {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
-            <Link href='/client/dashboard'>
+          <Link href='/client/dashboard'>
+            <DropdownMenuItem>
               Perfil
-            </Link>
-            {/* <DropdownMenuShortcut>⇧P</DropdownMenuShortcut> */}
-          </DropdownMenuItem>
+            </DropdownMenuItem>
+          </Link>
           {
             session?.user.role === 'admin'
               ? (
-                <DropdownMenuItem>
-                  <Link href='/admin/dashboard'>
+                <Link href='/admin/dashboard'>
+                  <DropdownMenuItem>
                     Dashboard Admin
-                  </Link>
-                  {/* <DropdownMenuShortcut>⇧D</DropdownMenuShortcut> */}
-                </DropdownMenuItem>
+                  </DropdownMenuItem>
+                </Link>
                 )
               : null
           }
-          <DropdownMenuItem>
-            <Link href='/client/dashboard'>
+          <Link href='/client/dashboard'>
+            <DropdownMenuItem>
               Dashboard
-            </Link>
-            {/* <DropdownMenuShortcut>⌘B</DropdownMenuShortcut> */}
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href='/client/dashboard'>
+            </DropdownMenuItem>
+          </Link>
+          <Link href='/client/dashboard'>
+            <DropdownMenuItem>
               Configuración
-            </Link>
-            {/* <DropdownMenuShortcut>⌘S</DropdownMenuShortcut> */}
-          </DropdownMenuItem>
+            </DropdownMenuItem>
+          </Link>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
           Cerrar sesión
-          {/* <DropdownMenuShortcut>⇧Q</DropdownMenuShortcut> */}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
