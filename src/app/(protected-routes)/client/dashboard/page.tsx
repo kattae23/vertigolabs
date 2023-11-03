@@ -2,7 +2,7 @@ import React from 'react'
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
 
-import Image from 'next/image'
+// import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -39,23 +39,8 @@ export default async function DashboardPage () {
   }
   return (
     <>
-      <div className='md:hidden'>
-        <Image
-          src='/examples/dashboard-light.png'
-          width={1280}
-          height={866}
-          alt='Dashboard'
-          className='block dark:hidden'
-        />
-        <Image
-          src='/examples/dashboard-dark.png'
-          width={1280}
-          height={866}
-          alt='Dashboard'
-          className='hidden dark:block'
-        />
-      </div>
-      <div className='hidden flex-col md:flex'>
+      <div className='md:hidden' />
+      <div className='flex-col md:flex mt-[77px]'>
         <div className='border-b'>
           <div className='flex h-16 items-center px-4'>
             <TeamSwitcher />
