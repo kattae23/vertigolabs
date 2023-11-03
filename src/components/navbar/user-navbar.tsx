@@ -11,7 +11,6 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
 import clsx from 'clsx'
@@ -22,12 +21,13 @@ export function UserNav () {
   if (status === 'unauthenticated') {
     return <p>loading</p>
   }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
-            <AvatarImage src={session?.user.image! || '/favicon.ico'} alt='@shadcn' />
+            <AvatarImage src={session?.user.image! || '/user-default.jpg'} alt='@shadcn' />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </Button>
@@ -48,14 +48,14 @@ export function UserNav () {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             Perfil
-            <DropdownMenuShortcut>⇧P</DropdownMenuShortcut>
+            {/* <DropdownMenuShortcut>⇧P</DropdownMenuShortcut> */}
           </DropdownMenuItem>
           {
             session?.user.role === 'user'
               ? (
                 <DropdownMenuItem>
                   Dashboard Admin
-                  <DropdownMenuShortcut>⇧D</DropdownMenuShortcut>
+                  {/* <DropdownMenuShortcut>⇧D</DropdownMenuShortcut> */}
                 </DropdownMenuItem>
                 )
               : null
@@ -72,7 +72,7 @@ export function UserNav () {
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
           Cerrar sesión
-          <DropdownMenuShortcut>⇧Q</DropdownMenuShortcut>
+          {/* <DropdownMenuShortcut>⇧Q</DropdownMenuShortcut> */}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
