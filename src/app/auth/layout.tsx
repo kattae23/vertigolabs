@@ -16,19 +16,10 @@ export default async function Layout ({
     redirect('/')
   }
   return (
-    <main className='mt-[96px]'>
-      <section className='container relative h-auth py-20 flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0'>
-        {/* <Link
-          href={process.env.NEXT_PUBLIC_URL + '/auth/register'}
-          className={cn(
-            buttonVariants({ variant: 'ghost' }),
-            'absolute right-4 top-20 md:right-8 md:top-8'
-          )}
-        >
-          Regístrate
-        </Link> */}
+    <main className=''>
+      <section className='container relative h-auth mt-[77px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0'>
         <div className='relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex'>
-          <div className='absolute inset-0 bg-zinc-900 bg-center bg-no-repeat' style={{ backgroundImage: 'url(/carousel-platform-04.jpg)' }} />
+          <div className='absolute inset-0 bg-zinc-900 bg-center bg-no-repeat bg-cover' style={{ backgroundImage: 'url(/carousel-platform-04.jpg)' }} />
           <div className='relative flex items-center text-lg font-medium'>
             <Image src={process.env.NEXT_PUBLIC_URL + '/grisocorp.png'} alt='logo grisocorp' width={100} height={100} />
           </div>
