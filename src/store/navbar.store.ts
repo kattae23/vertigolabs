@@ -3,7 +3,7 @@ import { create } from 'zustand'
 
 interface State {
     menuMobileLinks: MenuMobileLinks[]
-  }
+}
 
 export const navbarStore = create<State>((set) => ({
   menuMobileLinks: [
