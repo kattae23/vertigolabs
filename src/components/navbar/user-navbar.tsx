@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import clsx from 'clsx'
 import { signOut, useSession } from 'next-auth/react'
+import Link from 'next/link'
 
 export function UserNav () {
   const { data: session, status } = useSession()
@@ -47,25 +48,33 @@ export function UserNav () {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            Perfil
+            <Link href='/client/dashboard'>
+              Perfil
+            </Link>
             {/* <DropdownMenuShortcut>⇧P</DropdownMenuShortcut> */}
           </DropdownMenuItem>
           {
-            session?.user.role === 'user'
+            session?.user.role === 'admin'
               ? (
                 <DropdownMenuItem>
-                  Dashboard Admin
+                  <Link href='/admin/dashboard'>
+                    Dashboard Admin
+                  </Link>
                   {/* <DropdownMenuShortcut>⇧D</DropdownMenuShortcut> */}
                 </DropdownMenuItem>
                 )
               : null
           }
           <DropdownMenuItem>
-            Dashboard
+            <Link href='/client/dashboard'>
+              Dashboard
+            </Link>
             {/* <DropdownMenuShortcut>⌘B</DropdownMenuShortcut> */}
           </DropdownMenuItem>
           <DropdownMenuItem>
-            Configuración
+            <Link href='/client/dashboard'>
+              Configuración
+            </Link>
             {/* <DropdownMenuShortcut>⌘S</DropdownMenuShortcut> */}
           </DropdownMenuItem>
         </DropdownMenuGroup>
