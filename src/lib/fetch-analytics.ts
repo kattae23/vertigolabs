@@ -4,9 +4,7 @@ export async function fetchAnalytics () {
   try {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL!
     const res = await fetch(`${apiUrl}/analytics`, {
-      next: {
-        revalidate: 3600
-      }
+      cache: 'only-if-cached'
     })
     const data = await res.json()
     return data as Promise<AnalyticsArrType>
