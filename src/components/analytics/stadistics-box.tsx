@@ -8,9 +8,10 @@ import { BsFillCalendarMonthFill } from 'react-icons/bs'
 import { FaBriefcase, FaHandshake, FaPercent, FaRegMoneyBillAlt } from 'react-icons/fa'
 import { IoMdAnalytics } from 'react-icons/io'
 import { TbReload } from 'react-icons/tb'
-import { AnalyticsArrType } from '@/types/api-types'
+import { fetchAnalytics } from '@/lib/fetch-analytics'
 
-const StadisticsBox = ({ analytics }: {analytics: AnalyticsArrType}) => {
+const StadisticsBox = async () => {
+  const analytics = await fetchAnalytics()
   return (
     <article>
       <div className='w-full xl:max-w-fit gap-7 flex flex-col min-[1200px]:flex-row justify-center items-center'>

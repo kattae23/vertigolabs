@@ -60,7 +60,7 @@ const Footer = () => {
         <div className='flex flex-col lg:flex-row justify-between gap-7 mt-12'>
           <div className='w-full h-full hidden lg:flex flex-col'>
             <Image
-              src={process.env.NEXT_PUBLIC_URL + '/logo-white.png'}
+              src={process.env.NEXT_PUBLIC_URL + '/grisocorp.png'}
               alt='logo of griso corp, link to the home page'
               width={100}
               height={100}
