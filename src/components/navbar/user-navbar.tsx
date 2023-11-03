@@ -29,7 +29,7 @@ export function UserNav () {
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
-            <AvatarImage src={session?.user.image! || '/user-default.jpg'} alt='@shadcn' />
+            <AvatarImage src={session?.user.image! || '/user-default.jpg'} alt={`${session?.user.name} profile pic`} />
             <AvatarFallback>SC</AvatarFallback>
           </Avatar>
         </Button>
