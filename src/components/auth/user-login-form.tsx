@@ -132,7 +132,8 @@ export function UserLoginForm ({ className, ...props }: UserLoginFormProps) {
       </div>
       <Button
         variant='outline' type='button' disabled={isLoading} onClick={() => signIn('google', {
-          redirect: false
+          redirect: false,
+          callbackUrl: '/auth/login'
         })}
       >
         {isLoading
@@ -146,7 +147,8 @@ export function UserLoginForm ({ className, ...props }: UserLoginFormProps) {
       </Button>
       <Button
         variant='outline' type='button' disabled={isLoading} onClick={() => signIn('github', {
-          redirect: false
+          redirect: false,
+          callbackUrl: '/auth/login'
         })}
       >
         {isLoading
