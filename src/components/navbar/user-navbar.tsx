@@ -36,7 +36,7 @@ export function UserNav () {
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56' align='end' forceMount>
         <DropdownMenuLabel className='font-normal'>
-          <div className='flex flex-col space-y-1'>
+          <div className='flex flex-col space-y-2'>
             <p className='text-sm font-medium leading-none'>{session?.user.name}</p>
             <p className={clsx('text-xs leading-none', session?.user.role === 'admin' ? 'text-gray-800 uppercase' : 'text-muted-foreground')}>
               {session?.user.role}
@@ -46,9 +46,8 @@ export function UserNav () {
             </p>
           </div>
         </DropdownMenuLabel>
-        <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <Link href='/client/dashboard'>
+          <Link href='/client/dashboard/mis-datos/identificacion'>
             <DropdownMenuItem>
               Perfil
             </DropdownMenuItem>
@@ -69,7 +68,7 @@ export function UserNav () {
               Dashboard
             </DropdownMenuItem>
           </Link>
-          <Link href='/client/dashboard'>
+          <Link href='/client/dashboard/mis-datos/datos-adicionales'>
             <DropdownMenuItem>
               Configuración
             </DropdownMenuItem>

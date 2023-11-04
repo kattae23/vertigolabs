@@ -1,28 +1,16 @@
 import React from 'react'
 import { getServerSession } from 'next-auth'
 import { redirect } from 'next/navigation'
-
-import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card'
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger
-} from '@/components/ui/tabs'
-import { CalendarDateRangePicker } from '@/components/dashboard/date-range-picker'
-import { MainNav } from '@/components/dashboard/main-nav'
-import { Overview } from '@/components/dashboard/overview'
-import { RecentSales } from '@/components/dashboard/recent-sales'
-import { Search } from '@/components/dashboard/search'
-import TeamSwitcher from '@/components/dashboard/team-switcher'
 import { Metadata } from 'next'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
+import { AiOutlineExclamationCircle } from 'react-icons/ai'
+import Link from 'next/link'
+import { IcoBeneficioNeto, IcoCapitalInvertido } from '@/components/icons'
+import { TbBrandGoogleAnalytics } from 'react-icons/tb'
+import { GiMegaphone, GiTakeMyMoney } from 'react-icons/gi'
+import { MdOutlineSavings } from 'react-icons/md'
+import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { CheckIcon } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Dashboard',
@@ -30,173 +18,83 @@ export const metadata: Metadata = {
 }
 
 export default async function DashboardPage () {
-  const session = await getServerSession()
+  const session = await getServerSession(authOptions)
   if (!session) {
     redirect('/')
   }
+
   return (
-    <>
-      <div className='md:hidden' />
-      <div className='flex-col md:flex mt-[77px]'>
-        <div className='border-b'>
-          <div className='flex h-16 items-center px-4'>
-            <TeamSwitcher />
-            <MainNav className='mx-6' />
-            <div className='ml-auto flex items-center space-x-4'>
-              <Search />
-            </div>
-          </div>
-        </div>
-        <div className='flex-1 space-y-4 p-8 pt-6'>
-          <div className='flex items-center justify-between space-y-2'>
-            <h2 className='text-3xl font-bold tracking-tight'>Dashboard</h2>
-            <div className='flex items-center space-x-2'>
-              <CalendarDateRangePicker />
-              <Button>Download</Button>
-            </div>
-          </div>
-          <Tabs defaultValue='overview' className='space-y-4'>
-            <TabsList>
-              <TabsTrigger value='overview'>Overview</TabsTrigger>
-              <TabsTrigger value='analytics' disabled>
-                Analytics
-              </TabsTrigger>
-              <TabsTrigger value='reports' disabled>
-                Reports
-              </TabsTrigger>
-              <TabsTrigger value='notifications' disabled>
-                Notifications
-              </TabsTrigger>
-            </TabsList>
-            <TabsContent value='overview' className='space-y-4'>
-              <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
-                <Card>
-                  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-                    <CardTitle className='text-sm font-medium'>
-                      Total Revenue
-                    </CardTitle>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      className='h-4 w-4 text-muted-foreground'
-                    >
-                      <path d='M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' />
-                    </svg>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='text-2xl font-bold'>$45,231.89</div>
-                    <p className='text-xs text-muted-foreground'>
-                      +20.1% from last month
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-                    <CardTitle className='text-sm font-medium'>
-                      Subscriptions
-                    </CardTitle>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      className='h-4 w-4 text-muted-foreground'
-                    >
-                      <path d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2' />
-                      <circle cx='9' cy='7' r='4' />
-                      <path d='M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75' />
-                    </svg>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='text-2xl font-bold'>+2350</div>
-                    <p className='text-xs text-muted-foreground'>
-                      +180.1% from last month
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-                    <CardTitle className='text-sm font-medium'>Sales</CardTitle>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      className='h-4 w-4 text-muted-foreground'
-                    >
-                      <rect width='20' height='14' x='2' y='5' rx='2' />
-                      <path d='M2 10h20' />
-                    </svg>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='text-2xl font-bold'>+12,234</div>
-                    <p className='text-xs text-muted-foreground'>
-                      +19% from last month
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader className='flex flex-row items-center justify-between space-y-0 pb-2'>
-                    <CardTitle className='text-sm font-medium'>
-                      Active Now
-                    </CardTitle>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      viewBox='0 0 24 24'
-                      fill='none'
-                      stroke='currentColor'
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      strokeWidth='2'
-                      className='h-4 w-4 text-muted-foreground'
-                    >
-                      <path d='M22 12h-4l-3 9L9 3l-3 9H2' />
-                    </svg>
-                  </CardHeader>
-                  <CardContent>
-                    <div className='text-2xl font-bold'>+573</div>
-                    <p className='text-xs text-muted-foreground'>
-                      +201 since last hour
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-              <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-7'>
-                <Card className='col-span-4'>
-                  <CardHeader>
-                    <CardTitle>Overview</CardTitle>
-                  </CardHeader>
-                  <CardContent className='pl-2'>
-                    <Overview />
-                  </CardContent>
-                </Card>
-                <Card className='col-span-3'>
-                  <CardHeader>
-                    <CardTitle>Recent Sales</CardTitle>
-                    <CardDescription>
-                      You made 265 sales this month.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <RecentSales />
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
+    <main>
+      <div className='flex md:justify-between items-start md:items-center flex-col md:flex-row md:space-y-0 space-y-5'>
+        <h2 className='uppercase text-2xl text-zinc-700 inline-block text-center md:text-start'>
+          Bienvenid@ {session.user.name} {session.user.lastName}
+        </h2>
+        <Popover>
+          <PopoverTrigger className='px-5 py-4 border-red-400 border-solid border text-red-400 underline flex items-center'>Tienes tareas pendientes <strong className='px-2'>(2)</strong> <AiOutlineExclamationCircle /></PopoverTrigger>
+          <PopoverContent>Todavia tienes tareas pendientes.</PopoverContent>
+        </Popover>
       </div>
-    </>
+      <section className='mt-5'>
+        {
+          session.user.accountState === 'premium'
+            ? (
+              <div className='w-full bg-[#D6F5D6] border border-solid border-green-500 px-7 py-7 text-sm text-[#493d3e] flex items-center justify-between shadow-emerald-500 shadow-sm my-16'>
+                <div className='flex justify-center items-center space-x-2'>
+                  <CheckIcon className='text-white bg-green-500 rounded-full p-1' />
+                  <h2>Estado de tu cuenta: <span className='uppercase font-bold'>{session.user.accountState}</span></h2>
+                </div>
+                <div>
+                  <h2 className='font-medium'>Fecha de alta en GrisoCorp: {String(session.user.createdAt)}</h2>
+                </div>
+              </div>
+              )
+            : null
+        }
+        <div className='relative flex flex-col space-y-5 bg-[#13294A] text-white px-3 md:px-8 py-7'>
+          {session.user.accountState === 'uncompleted'
+            ? (
+              <>
+                <h1 className='uppercase'>Todavía no tienes cuenta GrisoCorp</h1>
+                <div className='block md:w-3/4'>
+                  <p className='text-sm'>Necesitas una cuenta GrisoCorp para poder comenzar a invertir en nuestras oportunidades. No te preocupes, el proceso de creación es muy sencillo y solo te llevará unos minutos.</p>
+                </div>
+                <div className='block'>
+                  <Link href={process.env.NEXT_PUBLIC_URL + '/client/dashboard/mis-datos'} className='text-xs font-bold px-4 py-3 border-[#8FCCC9] bg-white border-solid border text-[#8FCCC9] uppercase'>
+                    Crear cuenta GrisoCorp
+                  </Link>
+                </div>
+              </>
+              )
+            : (
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 uppercase space-y-5 text-base [&>div>h4]:text-xl [&>div>h4]:mt-1'>
+                <div className='flex flex-col items-center justify-center'>
+                  <h2 className='flex items-center'><IcoCapitalInvertido />Capital total invertido</h2>
+                  <h4>0,00$</h4>
+                </div>
+                <div className='flex flex-col items-center justify-center'>
+                  <h2 className='flex items-center'><IcoBeneficioNeto />RENDIMIENTO NETO</h2>
+                  <h4>0,00$</h4>
+                </div>
+                <div className='flex flex-col items-center justify-center'>
+                  <h2 className='flex items-center'><TbBrandGoogleAnalytics className='mr-1 text-2xl' />TIR MEDIA</h2>
+                  <h4>0,00$</h4>
+                </div>
+                <div className='flex flex-col items-center justify-center'>
+                  <h2 className='flex items-center'><GiMegaphone className='mr-1 text-3xl' />INGRESOS POR PROMOS</h2>
+                  <h4>0,00$</h4>
+                </div>
+                <div className='flex flex-col items-center justify-center'>
+                  <h2 className='flex items-center'><GiTakeMyMoney className='mr-1 text-3xl' />SALDO DISPONIBLE</h2>
+                  <h4>0,00$</h4>
+                </div>
+                <div className='flex flex-col items-center justify-center'>
+                  <h2 className='flex items-center'><MdOutlineSavings className='mr-1 text-3xl' />RENTABILIDAD PROVISIONAL</h2>
+                  <h4>0,00$</h4>
+                </div>
+              </div>
+              )}
+        </div>
+      </section>
+    </main>
   )
 }

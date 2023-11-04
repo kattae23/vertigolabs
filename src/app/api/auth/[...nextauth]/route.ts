@@ -5,7 +5,7 @@ import CredentialsProvider from 'next-auth/providers/credentials'
 import GoogleProvider from 'next-auth/providers/google'
 import GithubProvider from 'next-auth/providers/github'
 
-export const AuthOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   callbacks: {
     async jwt ({ token, user }) {
       return { ...token, ...user }
@@ -87,6 +87,6 @@ export const AuthOptions: NextAuthOptions = {
   }
 }
 
-const handler = NextAuth(AuthOptions)
+const handler = NextAuth(authOptions)
 
 export { handler as GET, handler as POST }

@@ -31,7 +31,7 @@ const SocialIcons = ({ footer = false }: Props) => {
     )
   } else {
     return (
-      <div className='w-full flex flex-row flex-wrap text-xl'>
+      <div className='w-full flex flex-row flex-wrap text-xl [&>a>div]:bg-[#FD7B61]'>
         <Link aria-label='Link to social media facebook.com' href='https://facebook.com' className='mr-1 md:mr-5 py-2'>
           <div className='bg-inherit rounded-full p-3 md:p-4 border-2 text-white'>
             <FaFacebookF />
