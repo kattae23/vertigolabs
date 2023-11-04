@@ -39,7 +39,7 @@ export const menuLinks = [
 ]
 
 const Menu = () => {
-  const { status } = useSession()
+  const { data: session, status } = useSession()
   const navContext = useContext(NavContext)
 
   if (!navContext) {
@@ -64,7 +64,23 @@ const Menu = () => {
           ? (
             <>
               <div className='flex justify-center items-center'>
-                <div className='mr-3'>
+                <div className={clsx('flex mr-5 uppercase text-sm font-semibold text-[#483c3d]',
+                  fixWork ? fix ? 'text-[#483c3d]' : 'text-white' : 'text-[#483c3d]'
+                )}
+                >
+                  <h2 className=''>Saldo disponible: {session.user.money} $
+                  </h2>
+                  <span className={clsx('w-[1px] h-[20px] mx-3', fixWork ? fix ? 'bg-[#483c3d]' : 'bg-white' : 'bg-[#483c3d]')} />
+                  <div className='flex'>
+                    <Link href={process.env.NEXT_PUBLIC_URL + '/client/dashboard/mi-cuenta/ingresos'}>
+                      Ingresar
+                    </Link>
+                    <Link className='ml-5' href={process.env.NEXT_PUBLIC_URL + '/client/dashboard/oportunidades'}>
+                      Invertir
+                    </Link>
+                  </div>
+                </div>
+                <div className='mr-3 flex'>
                   <UserNav />
                 </div>
               </div>

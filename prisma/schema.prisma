@@ -23,6 +23,7 @@ model User {
   lastName               String?
   secondLastName         String?
   accountState           AccountState            @default(uncompleted)
+  money                  Float                  @default(0.00)
   nacionality            String?
   phone                  String?
   emailVerified          DateTime?

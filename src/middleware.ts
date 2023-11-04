@@ -7,6 +7,7 @@ export default withAuth(
   function middleware (req: NextRequestWithAuth) {
     if (req.nextUrl.pathname.startsWith('/admin') && req.nextauth.token?.role !== 'admin') { return NextResponse.rewrite(new URL('/denied', baseUrl)) }
     if (req.nextUrl.pathname.startsWith('/client') && req.nextauth.token?.role !== 'user' && req.nextauth.token?.role !== 'admin') { return NextResponse.rewrite(new URL('/denied', baseUrl)) }
+    if (req.nextUrl.pathname === '/client/dashboard/oportunidades') { return NextResponse.rewrite(new URL('/oportunidades', baseUrl)) }
   },
   {
     callbacks: {
