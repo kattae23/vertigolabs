@@ -14,6 +14,8 @@ updaterepo.sh
 update.sh
 update-server.yml
 
+/prisma/migrations
+
 # next.js
 /.next/
 /out/

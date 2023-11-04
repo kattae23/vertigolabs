@@ -8,8 +8,11 @@ import LanguageMenu from './language-menu'
 import Image from 'next/image'
 import Link from 'next/link'
 import SocialIcons from '@/components/social-icons'
+import { useSession } from 'next-auth/react'
+import MobileButtons from './mobile-button'
 
 const MenuMobile = () => {
+  const { data: session } = useSession()
   const navContext = useContext(NavContext)
 
   if (!navContext) {
@@ -20,7 +23,7 @@ const MenuMobile = () => {
   return ( // menu como tal
     <div
       className={
-      clsx('w-[80vw] md:w-80 h-screen bg-white overflow-y-scroll top-0 transition-all duration-700 absolute flex flex-col p-8',
+      clsx('w-[100vw] sm:w-80 h-screen bg-white overflow-y-scroll top-0 transition-all duration-700 absolute flex flex-col p-8',
         openMenu ? 'left-0' : '-left-[1200px]'
       )
 }
@@ -42,6 +45,13 @@ const MenuMobile = () => {
         </span>
       </div>
       <hr />
+      <div className='flex flex-col md:hidden space-y-5 text-xs text-[#493d3e] text-center mb-5'>
+        <p className=''>Saldo disponible: <span className='font-bold text-sm'>{session?.user.money} $</span></p>
+        <div className='flex justify-between'>
+          <MobileButtons label='Ingresar' value='/client/dashboard/mi-cuenta/ingresos' />
+          <MobileButtons label='Invertir' value='/client/dashboard/oportunidades' />
+        </div>
+      </div>
       {
         menuLinks.map(({ label, value }, index) =>
           typeof value === 'string'
