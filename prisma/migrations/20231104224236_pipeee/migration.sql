@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `User` ADD COLUMN `money` DOUBLE NOT NULL DEFAULT 0.00;
