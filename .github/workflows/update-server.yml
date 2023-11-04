@@ -26,8 +26,8 @@ jobs:
           cd /var/www/vertigolabs
           git pull origin prod
           pnpm install
-          pnpm build
-          prisma migrate deploy
           prisma db pull
           prisma db push
+          prisma migrate deploy
+          pnpm build
           pm2 restart vertigolabs
