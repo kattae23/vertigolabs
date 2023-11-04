@@ -3,14 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { redirect } from 'next/navigation'
-import { AuthOptions } from '../api/auth/[...nextauth]/route'
+import { authOptions } from '../api/auth/[...nextauth]/route'
 
 export default async function Layout ({
   children
 }: {
     children: React.ReactNode
   }) {
-  const session = await getServerSession(AuthOptions)
+  const session = await getServerSession(authOptions)
 
   if (session?.user) {
     redirect('/')
@@ -32,7 +32,7 @@ export default async function Layout ({
             </blockquote>
           </div>
         </div>
-        <div className='lg:p-8'>
+        <div className='p-8'>
           <div className='mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]'>
             <div className='flex flex-col space-y-2 text-center'>
               <h1 className='text-2xl font-semibold tracking-tight'>
