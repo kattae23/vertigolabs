@@ -64,7 +64,7 @@ const Menu = () => {
           ? (
             <>
               <div className='flex justify-center items-center'>
-                <div className={clsx('flex mr-5 uppercase text-sm font-semibold text-[#483c3d]',
+                <div className={clsx('hidden md:flex mr-5 uppercase text-sm font-semibold text-[#483c3d]',
                   fixWork ? fix ? 'text-[#483c3d]' : 'text-white' : 'text-[#483c3d]'
                 )}
                 >
