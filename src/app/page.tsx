@@ -11,6 +11,7 @@ export default function Home () {
       <ProjectsContainer
         filter='onfunded'
         {...{
+          basicInvestorTop: true,
           investmentInformationAnalytics: true,
           buttonLinkText: 'Ver más proyectos',
           title: 'Proyectos en los que invertir'
