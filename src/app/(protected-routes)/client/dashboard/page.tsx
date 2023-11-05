@@ -30,7 +30,7 @@ export default async function DashboardPage () {
           Bienvenid@ {session.user.name} {session.user.lastName}
         </h2>
         <Popover>
-          <PopoverTrigger className='px-5 py-4 border-red-400 border-solid border text-red-400 underline flex items-center'>Tienes tareas pendientes <strong className='px-2'>(2)</strong> <AiOutlineExclamationCircle /></PopoverTrigger>
+          <PopoverTrigger className='px-5 whitespace-nowrap py-4 w-full md:w-auto border-red-400 border-solid border text-red-400 underline flex items-center'>Tienes tareas pendientes <strong className='px-2'>(2)</strong> <AiOutlineExclamationCircle /></PopoverTrigger>
           <PopoverContent>Todavia tienes tareas pendientes.</PopoverContent>
         </Popover>
       </div>

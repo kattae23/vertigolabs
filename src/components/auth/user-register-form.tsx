@@ -29,6 +29,7 @@ import {
 } from '@/components/ui/select'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import countryList from 'react-select-country-list'
 
 interface UserRegisterFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
@@ -48,10 +49,16 @@ const formSchema = z.object({
   })
 })
 
+export interface CountryListProps {
+  value: string;
+  label: string;
+}
+
 export function UserRegisterForm ({ className, ...props }: UserRegisterFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const [error, setError] = React.useState<string | null>(null)
   const router = useRouter()
+  const options = React.useMemo(() => countryList().getData() as CountryListProps[], [])
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -168,10 +175,12 @@ export function UserRegisterForm ({ className, ...props }: UserRegisterFormProps
                       <SelectValue placeholder='Country' />
                     </SelectTrigger>
                   </FormControl>
-                  <SelectContent>
-                    <SelectItem value='ve'>Venezuela</SelectItem>
-                    <SelectItem value='mx'>México</SelectItem>
-                    <SelectItem value='pe'>Peru</SelectItem>
+                  <SelectContent position='item-aligned'>
+                    {
+                      options.map(({ value, label }, index) => (
+                        <SelectItem key={value + ' ' + label + index} value={value}>{label}</SelectItem>
+                      ))
+                    }
                   </SelectContent>
                 </Select>
                 <FormMessage />

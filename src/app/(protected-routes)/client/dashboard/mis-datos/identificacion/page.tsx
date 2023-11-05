@@ -14,7 +14,7 @@ const page = () => {
             <p className='text-xs'>Cambia tu contraseña, tus preferencias de idioma...</p>
           </div>
           <Link href={process.env.NEXT_PUBLIC_URL + '/client/dashboard/mis-datos'} className='block text-xs font-bold px-4 py-3 border-[#8FCCC9] bg-[#8FCCC9] border-solid border text-white uppercase text-center'>
-            Crear cuenta GrisoCorp
+            Cambiar ajustes
           </Link>
         </div>
       </article>
