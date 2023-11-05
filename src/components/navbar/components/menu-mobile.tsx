@@ -45,13 +45,19 @@ const MenuMobile = () => {
         </span>
       </div>
       <hr />
-      <div className='flex flex-col md:hidden space-y-5 text-xs text-[#493d3e] text-center mb-5'>
-        <p className=''>Saldo disponible: <span className='font-bold text-sm'>{session?.user.money} $</span></p>
-        <div className='flex justify-between'>
-          <MobileButtons label='Ingresar' value='/client/dashboard/mi-cuenta/ingresos' />
-          <MobileButtons label='Invertir' value='/client/dashboard/oportunidades' />
-        </div>
-      </div>
+      {
+        session
+          ? (
+            <div className='flex flex-col md:hidden space-y-5 text-xs text-[#493d3e] text-center mb-5'>
+              <p className=''>Saldo disponible: <span className='font-bold text-sm'>{session?.user.money} $</span></p>
+              <div className='flex justify-between'>
+                <MobileButtons label='Ingresar' value='/client/dashboard/mi-cuenta/ingresos' />
+                <MobileButtons label='Invertir' value='/client/dashboard/oportunidades' />
+              </div>
+            </div>
+            )
+          : null
+      }
       {
         menuLinks.map(({ label, value }, index) =>
           typeof value === 'string'

@@ -39,7 +39,10 @@ export const authOptions: NextAuthOptions = {
               email: credentials?.email,
               password: credentials?.password
             }),
-            headers: { 'Content-Type': 'application/json' }
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json'
+            }
           }
         )
         const user = await res.json()

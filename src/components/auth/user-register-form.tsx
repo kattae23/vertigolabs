@@ -85,7 +85,11 @@ export function UserRegisterForm ({ className, ...props }: UserRegisterFormProps
         phone: values.phone,
         email: values.email,
         password: values.password
-      })
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      }
     })
     if (data.status !== 201) {
       const { msg } = await data.json()
