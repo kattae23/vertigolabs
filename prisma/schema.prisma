@@ -25,6 +25,7 @@ model User {
   accountState           AccountState            @default(uncompleted)
   money                  Float                  @default(0.00)
   nacionality            String?
+  dateOfBirth            DateTime?
   phone                  String?
   emailVerified          DateTime?
   password               String?
@@ -42,6 +43,8 @@ model TaxResidence {
   country            String
   residentialAddress String
   fiscalNumber       String
+  usPerson           Boolean?
+  eeuuTin            String
   postalCode         Int
   city               String
   userId             String @unique
@@ -59,11 +62,9 @@ model IdentificationDocument {
   user           User   @relation(fields: [userId], references: [id])
 }
 
-model Gender {
-  id     String  @id @default(uuid())
-  name   String?
-  userId String  @unique
-  user   User    @relation(fields: [userId], references: [id])
+enum Gender {
+  male
+  female
 }
 
 model Account {
