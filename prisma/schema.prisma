@@ -57,7 +57,6 @@ model IdentificationDocument {
   documentNumber String
   frontSideImage String
   backSideImage  String
-  city           String
   userId         String @unique
   user           User   @relation(fields: [userId], references: [id])
 }
