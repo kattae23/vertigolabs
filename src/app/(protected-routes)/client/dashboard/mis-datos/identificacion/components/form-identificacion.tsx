@@ -21,6 +21,7 @@ import { cn } from '@/lib/utils'
 import { Session } from 'next-auth'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Textarea } from '@/components/ui/textarea'
+import Image from 'next/image'
 
 const formSchema = z.object({
   name: z.string().min(3, { message: 'name must be more than 3 characters' }),
@@ -34,6 +35,10 @@ const formSchema = z.object({
   country: z.string().min(2, { message: 'Country must be more than 2 characters' }),
   usPerson: z.boolean(),
   gender: z.string().min(2, { message: 'Gender must be more than 2 characters' }),
+  documentType: z.string().min(2, { message: 'Document type must be more than 2 characters' }),
+  documentNumber: z.string().min(2, { message: 'Document Number must be more than 2 characters' }),
+  frontSideImage: z.string().min(2, { message: 'Front Side Image must be more than 2 characters' }),
+  backSideImage: z.string().min(2, { message: 'Back Side Image must be more than 2 characters' }),
   eeuuTin: z.string(),
   birth: z.date({
     required_error: 'A date of birth is required.'
@@ -62,13 +67,19 @@ const FormIdentificacion = ({ session }: {session: Session}) => {
       nacionality: session?.user.nacionality!,
       email: session?.user.email!,
       phone: session?.user.phone!,
+      // tax residence
       country: '',
       fiscalNumber: '',
       residentialAddress: '',
       eeuuTin: '',
       postalCode: '',
       city: '',
-      usPerson
+      usPerson,
+      // IdentificationDocument
+      documentType: '',
+      documentNumber: '',
+      frontSideImage: '',
+      backSideImage: ''
     },
     shouldUnregister: true
   })
@@ -108,7 +119,7 @@ const FormIdentificacion = ({ session }: {session: Session}) => {
 
       <h2 className='uppercase text-lg text-[#493d3e]'>Datos de identificación</h2>
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
-        <div className='mt-8 grid gap-7 lg:grid-cols-3'>
+        <div className='mt-8 grid gap-7 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           <FormField
             control={form.control}
             name='name'
@@ -272,7 +283,7 @@ const FormIdentificacion = ({ session }: {session: Session}) => {
           />
         </div>
         <h2 className='uppercase text-lg text-[#493d3e]'>RESIDENCIA FISCAL</h2>
-        <div className='mt-8 grid gap-7 lg:grid-cols-3'>
+        <div className='mt-8 grid gap-7 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
           <FormField
             control={form.control}
             name='country'
@@ -407,7 +418,90 @@ const FormIdentificacion = ({ session }: {session: Session}) => {
             )}
           />
         </div>
-        <div className='w-full flex justify-end'>
+        <h2 className='uppercase text-lg text-[#493d3e]'>DOCUMENTO DE IDENTIFICACIÓN</h2>
+        <div className='mt-8 grid gap-7 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+          <FormField
+            control={form.control}
+            name='documentType'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Tipo de documento*</FormLabel>
+                <Select
+                  disabled={isLoading} onValueChange={(e) => {
+                    field.onChange(e)
+                    console.log('mover mariquera')
+                  }}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder='Tipo de documento' />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent position='item-aligned'>
+                    <SelectItem value='passport'>Pasaporte</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <div className='hidden lg:block' />
+          <div className='hidden lg:block' />
+          <FormField
+            control={form.control}
+            name='documentNumber'
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Número de documeto*</FormLabel>
+                <FormControl>
+                  <Input placeholder='Número de documeto' type='text' value={field.value} onChange={field.onChange} disabled={isLoading} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className='w-full border border-solid drop-shadow-sm flex flex-col lg:flex-row justify-between p-3'>
+          <div className='w-full text-sm text-gray-900 space-y-4'>
+            <p>Para <strong>evitar errores</strong> durante el proceso de validación, los documentos deben ser <strong>legibles</strong>, estar <strong>en vigor</strong>, estar en <strong>color</strong> y estar <strong>correctamente orientados.</strong></p>
+            <p>Si se realiza una captura con cámara desde un dispositivo móvil, deberá capturarse cada cara del documento <strong>en vertical</strong>, nunca en apaisado.</p>
+            <p>Por otra parte, solo se aceptarán archivos en formato <strong>JPG, PNG o PDF</strong>, con un peso máximo de <strong>4Mb</strong>.</p>
+          </div>
+          <Image src='/dni-example-v2.png' className='w-full h-auto mt-4 lg:mt-0 max-w-xs' width={500} height={500} alt='dni example' />
+        </div>
+        <div className='w-full grid grid-cols-1 md:grid-cols-2'>
+          <div>
+            <FormField
+              control={form.control}
+              name='frontSideImage'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Imagen cara delantera*</FormLabel>
+                  <FormControl>
+                    <Input placeholder='Imagen cara delantera*' type='file' value={field.value} onChange={field.onChange} disabled={isLoading} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <div>
+            <FormField
+              control={form.control}
+              name='backSideImage'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Imagen cara trasera*</FormLabel>
+                  <FormControl>
+                    <Input placeholder='Imagen cara trasera*' type='file' value={field.value} onChange={field.onChange} disabled={isLoading} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+        <div className='w-full flex justify-center lg:justify-end'>
           <Button type='submit' className='max-w-xs uppercase' disabled={isLoading}>
             {
               isLoading ? <Icons.spinner className='mr-2 h-4 w-4 animate-spin' /> : 'Aceptar y continuar'
